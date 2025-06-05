@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitaishi Fashion - Myntra Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles that are not inlined for structural elements or transitions */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #282c3f;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* IMPORTANT: Media queries cannot be inlined.
+         * These rules are essential for mobile responsiveness
+         * and must remain in a <style> block.
+         */
+        @media (max-width: 992px) {
+            .main-header .container {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .logo {
+                margin-right: 0;
+                order: 1; /* Keep logo first */
+            }
+
+            .categories-btn-container {
+                display: flex; /* Make categories button visible on smaller screens */
+                order: 2; /* Place it next to the logo */
+                margin-right: 10px; /* Add some space */
+            }
+
+            .search-bar {
+                order: 3; /* Move search bar below logo and categories button */
+                flex-basis: 100%; /* Take full width */
+                margin-top: 15px;
+                margin-right: 0;
+            }
+
+            .main-nav.desktop-nav {
+                display: none; /* Hide desktop nav on smaller screens */
+            }
+
+            .main-nav.mobile-desktop-nav-strip {
+                display: block; /* Show mobile nav strip */
+                order: 4; /* Place main-nav below search bar */
+                margin-top: 15px; /* Space between search and nav */
+                background-color: #f8f8f8; /* Light background for the nav strip */
+                padding: 10px 0; /* Add padding to the nav strip */
+                box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Subtle shadow */
+                position: sticky; /* Make it sticky */
+                top: 80px; /* Stick below the main header (approx. 15+50+15px) */
+                z-index: 990; /* Lower than main header (1000) but higher than content */
+                width: 100%; /* Ensure it takes full width when sticky */
+            }
+
+            .main-nav.mobile-desktop-nav-strip ul {
+                display: flex;
+                overflow-x: auto; /* Enable horizontal scrolling */
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+                white-space: nowrap; /* Prevent items from wrapping */
+                padding: 0 20px; /* Padding for scrollable content */
+                scroll-behavior: smooth; /* Smooth scroll when navigating */
+            }
+
+            .main-nav.mobile-desktop-nav-strip li {
+                display: inline-block; /* Keep items in a line */
+                flex: 0 0 auto; /* Prevent shrinking */
+                margin-right: 25px;
+                padding-bottom: 5px; /* Space for hover effect */
+            }
+            .main-nav.mobile-desktop-nav-strip li:last-child {
+                margin-right: 0; /* No margin on the last item */
+            }
+
+            .main-nav.mobile-desktop-nav-strip a {
+                padding: 5px 0; /* Adjust padding for links */
+                font-size: 15px; /* Slightly larger font */
+            }
+            .main-nav.mobile-desktop-nav-strip a span {
+                font-size: 13px; /* Adjust inner span font size */
+            }
+
+            #categoriesPanel {
+                top: 140px; /* Adjust top position for smaller header */
+            }
+
+            #categoriesPanel .container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+            }
+
+            .hero-banner .container,
+            #about .content-wrapper,
+            #investors .investor-info,
+            #contact .contact-content-wrapper {
+                flex-direction: column; /* Stack elements vertically */
+                text-align: center;
+            }
+
+            .hero-content,
+            .hero-image,
+            #about .content-wrapper > div,
+            #investors .investor-info > div,
+            #contact .contact-info-card,
+            #contact .contact-form-card {
+                min-width: unset; /* Remove min-width for stacking */
+                width: 100%;
+            }
+
+            .hero-image {
+                margin-top: 30px;
+            }
+
+            #about img,
+            #investors .investor-info img {
+                margin-bottom: 20px;
+            }
+
+            #investors .partners-logo-container {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .footer .container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust footer columns */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .top-header a {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            .top-header a:last-child {
+                margin-bottom: 0;
+            }
+
+            .main-header .container {
+                padding: 10px 15px;
+            }
+
+            .logo span {
+                font-size: 20px;
+            }
+
+            .main-nav.mobile-desktop-nav-strip {
+                margin-top: 10px; /* Reduce margin */
+                padding: 8px 0;
+                top: 70px; /* Adjust sticky top for smaller header height */
+            }
+
+            .main-nav.mobile-desktop-nav-strip ul {
+                padding: 0 15px; /* Adjust padding for smaller screens */
+            }
+
+            .main-nav.mobile-desktop-nav-strip li {
+                margin-right: 20px; /* Adjust spacing */
+            }
+
+            .main-nav.mobile-desktop-nav-strip a {
+                font-size: 14px;
+            }
+            .main-nav.mobile-desktop-nav-strip a span {
+                font-size: 11px;
+            }
+
+            #categoriesPanel {
+                top: 120px; /* Further adjust for smaller header */
+                padding: 15px 0;
+            }
+
+            #categoriesPanel .container {
+                grid-template-columns: 1fr; /* Single column on mobile */
+                gap: 20px;
+            }
+
+            .hero-banner {
+                padding: 30px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+
+            section h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            #services .grid-container,
+            #marriage .grid-container,
+            #models .grid-container,
+            #institutes .grid-container {
+                grid-template-columns: 1fr; /* Single column layout for cards */
+            }
+
+            #marriage .collection-card img {
+                height: 250px; /* Smaller image height for mobile */
+            }
+
+            #institutes {
+                padding: 30px;
+            }
+
+            #investors .content-box {
+                padding: 30px;
+            }
+
+            #contact .contact-info-card,
+            #contact .contact-form-card {
+                padding: 20px;
+            }
+
+            .footer .container {
+                grid-template-columns: 1fr; /* Single column for footer links */
+                text-align: center;
+            }
+
+            .footer .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Header Strip -->
+<!-- Font Awesome CDN (ensure this is included in your <head>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="top-header" style="background-color:#ff3f6c;color:white;padding:8px 0;font-size:12px;">
+    <div class="container" style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 20px;">
+        
+        <!-- Left side links -->
+        <div style="display:flex;">
+            <a href="#" style="color:white;text-decoration:none;margin-right:15px;">
+                <i class="fas fa-map-marker-alt" style="margin-right:5px;"></i> Track Order
+            </a>
+            <a href="contact_us.html" style="color:white;text-decoration:none;">
+                <i class="fas fa-question-circle" style="margin-right:5px;"></i> Customer Support
+            </a>
+        </div>
+
+        <!-- Right side links -->
+        <div style="display:flex;">
+            <a href="#" style="color:white;text-decoration:none;margin-right:15px;">
+                <i class="fas fa-heart" style="margin-right:5px;"></i> Wishlist
+            </a>
+            <a href="#" style="color:white;text-decoration:none;margin-right:15px;">
+                <i class="fas fa-user" style="margin-right:5px;"></i> Login/Signup
+            </a>
+            <a href="#" style="color:white;text-decoration:none;">
+                <i class="fas fa-shopping-bag" style="margin-right:5px;"></i> Bag
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Main Header -->
+<header class="main-header" style="background-color:white;box-shadow:0 1px 4px 0 rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:15px 20px;display:flex;align-items:center;">
+        <!-- Logo -->
+        <a href="#" class="logo" style="margin-right:30px;text-decoration:none;display:flex;align-items:center;">
+            <span class="hitaishi" style="font-size:24px;font-weight:700;color:#ff3f6c;">HITAISHI</span>
+            <span class="fashion" style="font-size:24px;font-weight:700;color:#282c3f;">FASHION</span>
+        </a>
+        
+        <!-- Categories Button (now visible on mobile) -->
+        <div class="categories-btn-container" style="position:relative;margin-right:20px;">
+            <button id="categoriesBtn" style="background:none;border:none;font-weight:600;cursor:pointer;display:flex;align-items:center;padding:10px 15px;border-radius:4px;transition:background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#f5f5f6'" onmouseout="this.style.backgroundColor='transparent'">
+                <i class="fas fa-bars" style="margin-right:8px;"></i>
+                <span>Categories</span>
+            </button>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar" style="flex-grow:1;position:relative;margin-right:20px;">
+            <div class="search-input-wrapper" style="display:flex;background:#f5f5f6;border-radius:4px;overflow:hidden;">
+                <input type="text" placeholder="Search for products, brands and more" class="search-input" style="flex-grow:1;border:none;background:transparent;padding:12px 16px;font-size:14px;outline:none;">
+                <button class="search-button" style="background:none;border:none;padding:0 15px;cursor:pointer;">
+                    <i class="fas fa-search" style="color:#282c3f;"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="main-nav desktop-nav" style="display:block;">
+            <ul style="display:flex;list-style:none;margin:0;padding:0;">
+                <li style="margin-right:25px;">
+                    <a href="about.html" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                        <span style="font-size:12px;margin-bottom:2px;">About Us</span>
+                    </a>
+                </li>
+                <li style="margin-right:25px;">
+                    <a href="services.html" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                        <span style="font-size:12px;margin-bottom:2px;">Services</span>
+                    </a>
+                </li>
+                <li style="margin-right:25px;">
+                    <a href="#marriage" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                        <span style="font-size:12px;margin-bottom:2px;">Marriage</span>
+                    </a>
+                </li>
+                  <li style="margin-right:25px;">
+                    <a href="#" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                        <span style="font-size:12px;margin-bottom:2px;">Affiliates</span>
+                    </a>
+                </li>
+                <li style="margin-right:25px;">
+                    <a href="#models" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                        <span style="font-size:12px;margin-bottom:2px;">Models</span>
+                    </a>
+                </li>
+                <li style="margin-right:25px;">
+                    <a href="institutes.html" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                        <span style="font-size:12px;margin-bottom:2px;">Institutes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#investors" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                        <span style="font-size:12px;margin-bottom:2px;">Investors</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Mobile/Desktop Navigation Strip (Visible on all views, horizontally scrollable on mobile) -->
+<nav class="main-nav mobile-desktop-nav-strip" style="display:none;">
+    <div class="container">
+        <ul style="list-style:none;margin:0;padding:0;">
+            <li><a href="about.html" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>About Us</span></a></li>
+            <li><a href="services.html" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Services</span></a></li>
+            <li><a href="#marriage" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Marriage</span></a></li>
+            <li><a href="#" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Affiliates</span></a></li>
+            <li><a href="#models" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Models</span></a></li>
+            <li><a href="#institutes" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Institutes</span></a></li>
+            <li><a href="#investors" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Investors</span></a></li>
+            <!-- Additional common mobile nav items -->
+            <li><a href="#" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>New Arrivals</span></a></li>
+            <li><a href="#" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Sales</span></a></li>
+            <li><a href="contact_us.html" style="text-decoration:none;color:#282c3f;font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'"><span>Customer Care</span></a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Categories Panel (Hidden by default, desktop dropdown) -->
+<div id="categoriesPanel" style="position:fixed;top:112px;left:0;width:100%;background:white;box-shadow:0 4px 12px 0 rgba(0,0,0,.1);z-index:999;display:none;padding:20px 0;">
+    <div class="container" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:0 20px;">
+        <!-- Women's Fashion -->
+        <div>
+            <h3 style="font-size:14px;font-weight:600;color:#ff3f6c;margin-bottom:15px;padding-bottom:8px;border-bottom:1px solid #f5f5f6;">WOMEN</h3>
+            <ul style="list-style:none;margin:0;padding:0;">
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Indian Wear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Western Wear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Lingerie</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Footwear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Accessories</a></li>
+            </ul>
+        </div>
+        
+        <!-- Men's Fashion -->
+        <div>
+            <h3 style="font-size:14px;font-weight:600;color:#ff3f6c;margin-bottom:15px;padding-bottom:8px;border-bottom:1px solid #f5f5f6;">MEN</h3>
+            <ul style="list-style:none;margin:0;padding:0;">
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Topwear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Bottomwear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Ethnic Wear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Footwear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Accessories</a></li>
+            </ul>
+        </div>
+        
+        <!-- Kids Fashion -->
+        <div>
+            <h3 style="font-size:14px;font-weight:600;color:#ff3f6c;margin-bottom:15px;padding-bottom:8px;border-bottom:1px solid #f5f5f6;">KIDS</h3>
+            <ul style="list-style:none;margin:0;padding:0;">
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Boys Clothing</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Girls Clothing</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Infants</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Footwear</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Toys & Accessories</a></li>
+            </ul>
+        </div>
+        
+        
+        <div>
+            <h3 style="font-size:14px;font-weight:600;color:#ff3f6c;margin-bottom:15px;padding-bottom:8px;border-bottom:1px solid #f5f5f6;">MORE</h3>
+            <ul style="list-style:none;margin:0;padding:0;">
+                <li style="margin-bottom:10px;"><a href="#designers" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Fashion Designers</a></li>
+                <li style="margin-bottom:10px;"><a href="#marriage-wares" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Marriage Wares</a></li>
+                <li style="margin-bottom:10px;"><a href="#models" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Fashion Models</a></li>
+                <li style="margin-bottom:10px;"><a href="#institutes" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Fashion Institutes</a></li>
+                <li style="margin-bottom:10px;"><a href="#business" style="text-decoration:none;color:#282c3f;font-size:13px;transition:color 0.3s ease;" onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">Fashion Business</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Banner -->
+<div class="hero-banner" style="
+    background: linear-gradient(45deg, 
+        #ff007f, #ff00ff, #ff6bff, 
+        #9d4edd, #7b2cbf, #5a189a
+    );
+    background-size: 400% 400%;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    animation: gradientBoom 8s ease infinite;
+    font-family: 'Poppins', Arial, sans-serif;
+    box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+">
+    <!-- Rainbow Confetti Explosion -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+    ">
+        <!-- Confetti Elements -->
+        <div style="
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            width: 12px;
+            height: 12px;
+            background: #ff0;
+            border-radius: 50%;
+            animation: confettiBurst 5s infinite;
+        "></div>
+        <div style="
+            position: absolute;
+            top: 30%;
+            right: 15%;
+            width: 16px;
+            height: 16px;
+            background: #f0f;
+            transform: rotate(45deg);
+            animation: confettiBurst 7s infinite 1s;
+        "></div>
+        <div style="
+            position: absolute;
+            bottom: 20%;
+            left: 30%;
+            width: 14px;
+            height: 14px;
+            background: #0ff;
+            animation: confettiBurst 6s infinite 0.5s;
+        "></div>
+        <div style="
+            position: absolute;
+            top: 50%;
+            right: 25%;
+            width: 18px;
+            height: 18px;
+            background: #0f0;
+            transform: rotate(30deg);
+            animation: confettiBurst 8s infinite 2s;
+        "></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" style="
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        position: relative;
+        z-index: 2;
+    ">
+        <!-- Text Content -->
+        <div class="hero-content" style="
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        ">
+            <h1 style="
+                font-size: clamp(36px, 6vw, 60px);
+                font-weight: 900;
+                color: #fff;
+                margin-bottom: 20px;
+                text-shadow: 
+                    0 0 10px rgba(255, 255, 255, 0.7),
+                    0 0 20px rgba(255, 0, 255, 0.5);
+                line-height: 1.2;
+            ">
+                <span style="
+                    color: #ff0;
+                    text-shadow: 
+                        0 0 15px #ff0,
+                        0 0 30px rgba(255, 255, 0, 0.5);
+                ">🎉</span> 
+                BIGGEST SALE EVER! 
+                <span style="
+                    color: #0ff;
+                    text-shadow: 
+                        0 0 15px #0ff,
+                        0 0 30px rgba(0, 255, 255, 0.5);
+                ">🔥</span>
+            </h1>
+            <p style="
+                font-size: clamp(18px, 3vw, 24px);
+                color: #fff;
+                margin-bottom: 30px;
+                text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                line-height: 1.5;
+            ">
+                <strong style="
+                    color: #ff0;
+                    text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+                ">FLASH SALE!</strong> 
+                Get <span style="color: #f0f; font-weight: 800;">80% OFF</span> on trending fashion! 
+                <span style="color: #0ff;">Limited time only! ⏳</span>
+            </p>
+            
+            <!-- Buttons -->
+            <div style="
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            ">
+                <a href="#" style="
+                    background: linear-gradient(45deg, #ff0, #f0f);
+                    color: #000;
+                    padding: 16px 32px;
+                    border-radius: 50px;
+                    text-decoration: none;
+                    font-weight: 800;
+                    display: inline-block;
+                    transition: all 0.3s ease;
+                    box-shadow: 
+                        0 5px 15px rgba(255, 0, 255, 0.5),
+                        0 0 10px rgba(255, 255, 0, 0.5);
+                    font-size: clamp(16px, 2.5vw, 20px);
+                    border: none;
+                    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(255, 0, 255, 0.7), 0 0 15px rgba(255, 255, 0, 0.7)'" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(255, 0, 255, 0.5), 0 0 10px rgba(255, 255, 0, 0.5)'">
+                    🚀 SHOP NOW
+                </a>
+                <a href="#" style="
+                    background: transparent;
+                    color: #fff;
+                    padding: 16px 32px;
+                    border-radius: 50px;
+                    text-decoration: none;
+                    font-weight: 800;
+                    display: inline-block;
+                    transition: all 0.3s ease;
+                    border: 3px solid #fff;
+                    font-size: clamp(16px, 2.5vw, 20px);
+                    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+                    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='scale(1.05)'" 
+                onmouseout="this.style.background='transparent'; this.style.transform='scale(1)'">
+                    💎 VIEW DEALS
+                </a>
+            </div>
+            
+            <!-- Discount Badge -->
+            <div style="
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                flex-wrap: wrap;
+            ">
+                <div style="
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 3px solid #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: linear-gradient(45deg, #f0f, #0ff);
+                    color: #000;
+                    font-weight: 900;
+                    font-size: 18px;
+                    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+                ">
+                    80%
+                </div>
+                <span style="
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: clamp(16px, 2.5vw, 20px);
+                    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+                ">
+                    🎊 <strong style="color: #ff0;">MEGA DISCOUNT!</strong> Ends soon!
+                </span>
+            </div>
+        </div>
+        
+        <!-- Hero Image -->
+        <div class="hero-image" style="
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        ">
+            <img src="img/hitaishifashion_hero2.png" alt="Fashion Model" style="
+                max-width: 100%;
+                height: auto;
+                max-height: 500px;margin-bottom: -180px;
+                filter: 
+                    drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3))
+                    brightness(1.05);
+                animation: float 3s ease-in-out infinite alternate;
+            ">
+            <div style="
+                position: absolute;
+                bottom: -90px;
+                right: 10%;
+                background: linear-gradient(45deg, #ff0, #f0f);
+                padding: 12px 20px;
+                border-radius: 50px;
+                box-shadow: 0 5px 20px rgba(255, 0, 255, 0.5);
+            ">
+                <span style="
+                    font-weight: 900;
+                    color: #000;
+                    font-size: clamp(14px, 2vw, 18px);
+                    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+                ">
+                    🔥 #1 TRENDING
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animation Keyframes (Inline Style) -->
+    <style>
+        @keyframes gradientBoom {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes confettiBurst {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+    </style>
+</div>
+
+<div class="coupons-section" style="
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffe8f5 100%);
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', Arial, sans-serif;
+">
+    <!-- Decorative elements -->
+    <div style="
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255,105,180,0.1);
+        border-radius: 50%;
+    "></div>
+    <div style="
+        position: absolute;
+        bottom: -30px;
+        left: -30px;
+        width: 150px;
+        height: 150px;
+        background: rgba(100,149,237,0.1);
+        border-radius: 50%;
+    "></div>
+    
+    <div class="container" style="
+        max-width: 1200px;
+        margin: 0 auto;
+    ">
+        <h2 style="
+            text-align: center;
+            font-size: clamp(28px, 4vw, 42px);
+            color: #333;
+            margin-bottom: 0px;
+            margin-top: -20px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        ">
+            <span style="
+                display: inline-block;
+                animation: bounce 2s infinite;
+            ">🎁</span> 
+            Exclusive Coupons 
+            <span style="
+                display: inline-block;
+                animation: bounce 2s infinite 0.5s;
+            ">💎</span>
+        </h2>
+        
+        <p style="
+            text-align: center;
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: #666;
+            margin-bottom: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        ">
+            Claim your special discounts before they expire!
+        </p>
+        
+        <div class="coupons-grid" style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        ">
+            <!-- Coupon 1 -->
+            <div class="coupon-card" style="
+                background: white;
+                border-radius: 15px;
+                padding: 25px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                position: relative;
+                overflow: hidden;
+                border-left: 5px solid #ff6b6b;
+                animation: slideIn 0.8s ease-out;
+                transition: transform 0.3s ease;
+            " onmouseover="this.style.transform='translateY(-10px)'" 
+            onmouseout="this.style.transform='translateY(0)'">
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 80px;
+                    height: 80px;
+                    background: rgba(255,107,107,0.1);
+                    border-radius: 0 0 0 100%;
+                "></div>
+                <h3 style="
+                    font-size: 22px;
+                    color: #ff6b6b;
+                    margin-bottom: 15px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                ">
+                    <span style="font-size: 28px;">🔥</span> Flash Sale
+                </h3>
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                ">
+                    <div style="
+                        background: #ff6b6b;
+                        color: white;
+                        padding: 8px 15px;
+                        border-radius: 50px;
+                        font-weight: bold;
+                        font-size: 24px;
+                    ">
+                        50% OFF
+                    </div>
+                    <div style="
+                        background: #f8f9fa;
+                        padding: 8px 15px;
+                        border-radius: 50px;
+                        font-weight: bold;
+                        font-size: 14px;
+                    ">
+                        CODE: <span style="color: #ff6b6b;">FLASH50</span>
+                    </div>
+                </div>
+                <p style="
+                    color: #666;
+                    margin-bottom: 20px;
+                    font-size: 15px;
+                ">
+                    Valid on all summer collection items. Limited time only!
+                </p>
+                <button style="
+                    background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+                    color: white;
+                    border: none;
+                    padding: 12px 25px;
+                    border-radius: 50px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    width: 100%;
+                    transition: transform 0.2s ease;
+                " onmouseover="this.style.transform='scale(1.05)'" 
+                onmouseout="this.style.transform='scale(1)'">
+                    COPY CODE
+                </button>
+                <div style="
+                    position: absolute;
+                    bottom: 5px;
+                    right: 15px;
+                    font-size: 12px;
+                    color: #999;
+                ">
+                    ⏳ Expires in 2 days
+                </div>
+            </div>
+            
+            <!-- Coupon 2 -->
+            <div class="coupon-card" style="
+                background: white;
+                border-radius: 15px;
+                padding: 25px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                position: relative;
+                overflow: hidden;
+                border-left: 5px solid #6b6bff;
+                animation: slideIn 0.8s ease-out 0.2s;
+                animation-fill-mode: both;
+                transition: transform 0.3s ease;
+            " onmouseover="this.style.transform='translateY(-10px)'" 
+            onmouseout="this.style.transform='translateY(0)'">
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 80px;
+                    height: 80px;
+                    background: rgba(107,107,255,0.1);
+                    border-radius: 0 0 0 100%;
+                "></div>
+                <h3 style="
+                    font-size: 22px;
+                    color: #6b6bff;
+                    margin-bottom: 15px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                ">
+                    <span style="font-size: 28px;">✨</span> New User
+                </h3>
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                ">
+                    <div style="
+                        background: #6b6bff;
+                        color: white;
+                        padding: 8px 15px;
+                        border-radius: 50px;
+                        font-weight: bold;
+                        font-size: 24px;
+                    ">
+                        $30 OFF
+                    </div>
+                    <div style="
+                        background: #f8f9fa;
+                        padding: 8px 15px;
+                        border-radius: 50px;
+                        font-weight: bold;
+                        font-size: 14px;
+                    ">
+                        CODE: <span style="color: #6b6bff;">WELCOME30</span>
+                    </div>
+                </div>
+                <p style="
+                    color: #666;
+                    margin-bottom: 20px;
+                    font-size: 15px;
+                ">
+                    For first-time customers only. Min. spend $100.
+                </p>
+                <button style="
+                    background: linear-gradient(to right, #6b6bff, #8e8eff);
+                    color: white;
+                    border: none;
+                    padding: 12px 25px;
+                    border-radius: 50px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    width: 100%;
+                    transition: transform 0.2s ease;
+                " onmouseover="this.style.transform='scale(1.05)'" 
+                onmouseout="this.style.transform='scale(1)'">
+                    COPY CODE
+                </button>
+                <div style="
+                    position: absolute;
+                    bottom: 15px;
+                    right: 15px;
+                    font-size: 12px;
+                    color: #999;
+                ">
+                    ⏳ Expires in 7 days
+                </div>
+            </div>
+            
+            <!-- Coupon 3 -->
+            <div class="coupon-card" style="
+                background: white;
+                border-radius: 15px;
+                padding: 25px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                position: relative;
+                overflow: hidden;
+                border-left: 5px solid #6bff6b;
+                animation: slideIn 0.8s ease-out 0.4s;
+                animation-fill-mode: both;
+                transition: transform 0.3s ease;
+            " onmouseover="this.style.transform='translateY(-10px)'" 
+            onmouseout="this.style.transform='translateY(0)'">
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 80px;
+                    height: 80px;
+                    background: rgba(107,255,107,0.1);
+                    border-radius: 0 0 0 100%;
+                "></div>
+                <h3 style="
+                    font-size: 22px;
+                    color: #6bff6b;
+                    margin-bottom: 15px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                ">
+                    <span style="font-size: 28px;">🎯</span> Clearance
+                </h3>
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                ">
+                    <div style="
+                        background: #6bff6b;
+                        color: white;
+                        padding: 8px 15px;
+                        border-radius: 50px;
+                        font-weight: bold;
+                        font-size: 24px;
+                    ">
+                        70% OFF
+                    </div>
+                    <div style="
+                        background: #f8f9fa;
+                        padding: 8px 15px;
+                        border-radius: 50px;
+                        font-weight: bold;
+                        font-size: 14px;
+                    ">
+                        CODE: <span style="color: #6bff6b;">CLEAR70</span>
+                    </div>
+                </div>
+                <p style="
+                    color: #666;
+                    margin-bottom: 20px;
+                    font-size: 15px;
+                ">
+                    Selected clearance items only. While stocks last!
+                </p>
+                <button style="
+                    background: linear-gradient(to right, #6bff6b, #8eff8e);
+                    color: white;
+                    border: none;
+                    padding: 12px 25px;
+                    border-radius: 50px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    width: 100%;
+                    transition: transform 0.2s ease;
+                " onmouseover="this.style.transform='scale(1.05)'" 
+                onmouseout="this.style.transform='scale(1)'">
+                    COPY CODE
+                </button>
+                <div style="
+                    position: absolute;
+                    bottom: 5px;
+                    right: 15px;
+                    font-size: 12px;
+                    color: #999;
+                ">
+                    ⏳ Expires in 3 days
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animation Keyframes -->
+    <style>
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</div>
+
+<!-- Main Content Sections -->
+<div class="container" style="max-width:1200px;margin:10px auto;padding:0 20px;">
+
+<section style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 1rem 1rem; background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fb 100%);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <!-- Section Header -->
+            <div style="text-align: center; margin-bottom: 1rem; animation: fadeIn 0.8s ease-out;">
+                <h2 style="font-size: 2rem; color: #333; margin-bottom: 0.5rem; position: relative; display: inline-block;">
+                    <span style="color: #e83e8c;">DAILY</span> DEALS
+                    <span style="position: absolute; bottom: -10px; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #e83e8c, #6f42c1);"></span>
+                </h2>
+                <p style="color: #666; font-size: 1rem;">Limited time offers - Shop before they're gone!</p>
+                <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem;">
+                    <div style="background-color: #e83e8c; color: white; padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 12px rgba(232, 62, 140, 0.3);">
+                        <i class="fas fa-clock" style="margin-right: 8px;"></i>
+                        <span id="countdown" style="font-family: monospace;">24:00:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deals Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.5rem;">
+                <!-- Deal 1 -->
+                <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; animation: slideUp 0.6s ease-out 0.1s both; position: relative;">
+                    <div style="position: relative; overflow: hidden; height: 200px;">
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Summer Dress" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div style="position: absolute; top: 10px; right: 10px; background-color: #e83e8c; color: white; padding: 0.3rem 0.6rem; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">-40%</div>
+                    </div>
+                    <div style="padding: 1.2rem;">
+                        <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Floral Summer Dress</h3>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                            <span style="font-size: 1.2rem; font-weight: bold; color: #e83e8c;">$39.99</span>
+                            <span style="font-size: 0.9rem; color: #999; text-decoration: line-through; margin-left: 0.5rem;">$66.99</span>
+                        </div>
+                        <button style="background: linear-gradient(90deg, #e83e8c, #6f42c1); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: bold; width: 100%; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Deal 2 -->
+                <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; animation: slideUp 0.6s ease-out 0.2s both; position: relative;">
+                    <div style="position: relative; overflow: hidden; height: 200px;">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Men's Shirt" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div style="position: absolute; top: 10px; right: 10px; background-color: #e83e8c; color: white; padding: 0.3rem 0.6rem; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">-30%</div>
+                    </div>
+                    <div style="padding: 1.2rem;">
+                        <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Premium Cotton Shirt</h3>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                            <span style="font-size: 1.2rem; font-weight: bold; color: #e83e8c;">$29.99</span>
+                            <span style="font-size: 0.9rem; color: #999; text-decoration: line-through; margin-left: 0.5rem;">$42.99</span>
+                        </div>
+                        <button style="background: linear-gradient(90deg, #e83e8c, #6f42c1); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: bold; width: 100%; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Deal 3 -->
+                <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; animation: slideUp 0.6s ease-out 0.3s both; position: relative;">
+                    <div style="position: relative; overflow: hidden; height: 200px;">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1026&q=80" alt="Sneakers" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div style="position: absolute; top: 10px; right: 10px; background-color: #e83e8c; color: white; padding: 0.3rem 0.6rem; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">-25%</div>
+                    </div>
+                    <div style="padding: 1.2rem;">
+                        <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Urban Style Sneakers</h3>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                            <span style="font-size: 1.2rem; font-weight: bold; color: #e83e8c;">$59.99</span>
+                            <span style="font-size: 0.9rem; color: #999; text-decoration: line-through; margin-left: 0.5rem;">$79.99</span>
+                        </div>
+                        <button style="background: linear-gradient(90deg, #e83e8c, #6f42c1); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: bold; width: 100%; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Deal 4 -->
+                <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; animation: slideUp 0.6s ease-out 0.4s both; position: relative;">
+                    <div style="position: relative; overflow: hidden; height: 200px;">
+                        <img src="https://images.unsplash.com/photo-1595341595379-cf0f0504c6f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Handbag" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div style="position: absolute; top: 10px; right: 10px; background-color: #e83e8c; color: white; padding: 0.3rem 0.6rem; border-radius: 50px; font-size: 0.8rem; font-weight: bold;">-50%</div>
+                    </div>
+                    <div style="padding: 1.2rem;">
+                        <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Elegant Leather Handbag</h3>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                            <span style="font-size: 1.2rem; font-weight: bold; color: #e83e8c;">$49.99</span>
+                            <span style="font-size: 0.9rem; color: #999; text-decoration: line-through; margin-left: 0.5rem;">$99.99</span>
+                        </div>
+                        <button style="background: linear-gradient(90deg, #e83e8c, #6f42c1); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: bold; width: 100%; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Button -->
+            <div style="text-align: center; margin-top: 2.5rem; animation: fadeIn 1s ease-out;">
+                <button style="background: transparent; color: #e83e8c; border: 2px solid #e83e8c; padding: 0.8rem 2rem; border-radius: 50px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-size: 1rem;">
+                    View All Deals <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Inline CSS for animations -->
+        <style>
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes slideUp {
+                from { 
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* Hover effects */
+            .deal-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            }
+            
+            .deal-card:hover img {
+                transform: scale(1.05);
+            }
+            
+            button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(232, 62, 140, 0.4);
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .deal-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                }
+                
+                .section-title {
+                    font-size: 1.8rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .deal-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .section-title {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
+        
+        <!-- Countdown Timer Script -->
+        <script>
+            // Countdown timer
+            function updateCountdown() {
+                const now = new Date();
+                const midnight = new Date();
+                midnight.setHours(24, 0, 0, 0);
+                
+                const diff = midnight - now;
+                
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown').textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+            
+            // Update every second
+            setInterval(updateCountdown, 1000);
+            updateCountdown(); // Initial call
+            
+            // Add hover effect to view all button
+            const viewAllBtn = document.querySelector('button[style*="View All Deals"]');
+            if (viewAllBtn) {
+                viewAllBtn.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'translateX(5px)';
+                    }
+                });
+                
+                viewAllBtn.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = 'translateX(0)';
+                    }
+                });
+            }
+        </script>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="margin-bottom:60px;">
+        <h2 style="font-size:28px;font-weight:700;color:#282c3f;margin-bottom:30px;text-align:center;">Our Services</h2>
+        <div class="grid-container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+            <div class="service-card" style="background:white;border-radius:8px;padding:25px;box-shadow:0 1px 4px 0 rgba(0,0,0,.1);text-align:center;">
+                <div class="icon-wrapper" style="width:60px;height:60px;background-color:#f5e6e8;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                    <i class="fas fa-cut" style="font-size:24px;color:#ff3f6c;"></i>
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:10px;">Custom Tailoring</h3>
+                <p style="font-size:14px;color:#535766;">Bespoke clothing tailored to your exact measurements and style preferences.</p>
+            </div>
+            <div class="service-card" style="background:white;border-radius:8px;padding:25px;box-shadow:0 1px 4px 0 rgba(0,0,0,.1);text-align:center;">
+                <div class="icon-wrapper" style="width:60px;height:60px;background-color:#f5e6e8;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                    <i class="fas fa-tshirt" style="font-size:24px;color:#ff3f6c;"></i>
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:10px;">Wardrobe Styling</h3>
+                <p style="font-size:14px;color:#535766;">Professional styling services for any occasion or lifestyle.</p>
+            </div>
+            <div class="service-card" style="background:white;border-radius:8px;padding:25px;box-shadow:0 1px 4px 0 rgba(0,0,0,.1);text-align:center;">
+                <div class="icon-wrapper" style="width:60px;height:60px;background-color:#f5e6e8;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                    <i class="fas fa-ring" style="font-size:24px;color:#ff3f6c;"></i>
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:10px;">Bridal Services</h3>
+                <p style="font-size:14px;color:#535766;">Complete wedding attire solutions for brides and grooms.</p>
+            </div>
+            <div class="service-card" style="background:white;border-radius:8px;padding:25px;box-shadow:0 1px 4px 0 rgba(0,0,0,.1);text-align:center;">
+                <div class="icon-wrapper" style="width:60px;height:60px;background-color:#f5e6e8;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                    <i class="fas fa-business-time" style="font-size:24px;color:#ff3f6c;"></i>
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:10px;">Corporate Wear</h3>
+                <p style="font-size:14px;color:#535766;">Professional attire solutions for businesses.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marriage Section -->
+    <section id="marriage" style="margin-bottom:60px;">
+        <h2 style="font-size:28px;font-weight:700;color:#282c3f;margin-bottom:30px;text-align:center;">Marriage Collections</h2>
+        <div class="grid-container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+            <div class="collection-card" style="position:relative;border-radius:8px;overflow:hidden;">
+                <img src="https://placehold.co/300x400/f5e6e8/282c3f?text=Bridal+Wear" alt="Bridal Wear" style="width:100%;height:350px;object-fit:cover;">
+                <div class="overlay" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);padding:20px;color:white;">
+                    <h3 style="font-size:20px;font-weight:600;margin-bottom:5px;">Bridal Wear</h3>
+                    <p style="font-size:14px;margin-bottom:15px;">Exquisite wedding dresses for your special day</p>
+                    <a href="#" style="color:white;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;">Shop Now <i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+                </div>
+            </div>
+            <div class="collection-card" style="position:relative;border-radius:8px;overflow:hidden;">
+                <img src="https://placehold.co/300x400/f5e6e8/282c3f?text=Groom's+Collection" alt="Groom's Collection" style="width:100%;height:350px;object-fit:cover;">
+                <div class="overlay" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);padding:20px;color:white;">
+                    <h3 style="font-size:20px;font-weight:600;margin-bottom:5px;">Groom's Collection</h3>
+                    <p style="font-size:14px;margin-bottom:15px;">Elegant outfits for the groom and groomsmen</p>
+                    <a href="#" style="color:white;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;">Shop Now <i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+                </div>
+            </div>
+            <div class="collection-card" style="position:relative;border-radius:8px;overflow:hidden;">
+                <img src="https://placehold.co/300x400/f5e6e8/282c3f?text=Bridesmaids" alt="Bridesmaids" style="width:100%;height:350px;object-fit:cover;">
+                <div class="overlay" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);padding:20px;color:white;">
+                    <h3 style="font-size:20px;font-weight:600;margin-bottom:5px;">Bridesmaids</h3>
+                    <p style="font-size:14px;margin-bottom:15px;">Beautiful dresses for your bridal party</p>
+                    <a href="#" style="color:white;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;">Shop Now <i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+                </div>
+            </div>
+            <div class="collection-card" style="position:relative;border-radius:8px;overflow:hidden;">
+                <img src="https://placehold.co/300x400/f5e6e8/282c3f?text=Marriage+Wares" alt="Marriage Wares" style="width:100%;height:350px;object-fit:cover;">
+                <div class="overlay" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);padding:20px;color:white;">
+                    <h3 style="font-size:20px;font-weight:600;margin-bottom:5px;">Marriage Wares</h3>
+                    <p style="font-size:14px;margin-bottom:15px;">Complete wedding accessories and essentials</p>
+                    <a href="#" style="color:white;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;">Shop Now <i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fashion Models Section -->
+    <section id="models" style="margin-bottom:60px;">
+        <h2 style="font-size:28px;font-weight:700;color:#282c3f;margin-bottom:30px;text-align:center;">Fashion Models</h2>
+        <div class="grid-container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
+            <div class="model-card" style="text-align:center;">
+                <div class="model-img-wrapper" style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 15px;border:3px solid #ff3f6c;">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Model 1" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:5px;">Priya Sharma</h3>
+                <p style="font-size:14px;color:#ff3f6c;">Women's Fashion</p>
+            </div>
+            <div class="model-card" style="text-align:center;">
+                <div class="model-img-wrapper" style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 15px;border:3px solid #ff3f6c;">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Model 2" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:5px;">Rahul Mehta</h3>
+                <p style="font-size:14px;color:#ff3f6c;">Men's Fashion</p>
+            </div>
+            <div class="model-card" style="text-align:center;">
+                <div class="model-img-wrapper" style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 15px;border:3px solid #ff3f6c;">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Model 3" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:5px;">Ananya Patel</h3>
+                <p style="font-size:14px;color:#ff3f6c;">Bridal Fashion</p>
+            </div>
+            <div class="model-card" style="text-align:center;">
+                <div class="model-img-wrapper" style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 15px;border:3px solid #ff3f6c;">
+                    <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Model 4" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:5px;">Neha Gupta</h3>
+                <p style="font-size:14px;color:#ff3f6c;">Kids Fashion</p>
+            </div>
+            <div class="model-card" style="text-align:center;">
+                <div class="model-img-wrapper" style="width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 15px;border:3px solid #ff3f6c;">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Model 5" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <h3 style="font-size:18px;font-weight:600;margin-bottom:5px;">Arjun Singh</h3>
+                <p style="font-size:14px;color:#ff3f6c;">Ethnic Wear</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fashion Institutes Section -->
+    <section id="institutes" style="margin-bottom:60px;background-color:#ff3f6c;padding:40px;border-radius:8px;color:white;">
+        <h2 style="font-size:28px;font-weight:700;margin-bottom:30px;text-align:center;color:white;">Fashion Institutes</h2>
+        <div class="grid-container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
+            <div class="institute-card" style="background:white;border-radius:8px;padding:25px;color:#282c3f;">
+                <h3 style="font-size:20px;font-weight:600;margin-bottom:15px;color:#ff3f6c;">Hitaishi Design School</h3>
+                <p style="margin-bottom:15px;">Premier fashion design institute offering comprehensive courses in apparel design, textile technology, and fashion marketing.</p>
+                <a href="#" style="color:#ff3f6c;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;">Learn More <i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+            </div>
+            <div class="institute-card" style="background:white;border-radius:8px;padding:25px;color:#282c3f;">
+                <h3 style="font-size:20px;font-weight:600;margin-bottom:15px;color:#ff3f6c;">Fashion Business Academy</h3>
+                <p style="margin-bottom:15px;">Specialized programs in fashion business management, retail operations, and e-commerce strategies.</p>
+                <a href="#" style="color:#ff3f6c;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;">Learn More <i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+            </div>
+            <div class="institute-card" style="background:white;border-radius:8px;padding:25px;color:#282c3f;">
+                <h3 style="font-size:20px;font-weight:600;margin-bottom:15px;color:#ff3f6c;">Modeling Institute</h3>
+                <p style="margin-bottom:15px;">Professional training for aspiring models with courses in runway walking, portfolio development, and industry networking.</p>
+                <a href="#" style="color:#ff3f6c;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;">Learn More <i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Section -->
+    <section id="investors" style="margin-bottom:60px;">
+        <h2 style="font-size:28px;font-weight:700;color:#282c3f;margin-bottom:30px;text-align:center;">Investors</h2>
+        <div class="content-box" style="background:white;border-radius:8px;padding:40px;box-shadow:0 1px 4px 0 rgba(0,0,0,.1);">
+            <div class="investor-info" style="display:flex;gap:40px;align-items:center;margin-bottom:30px;flex-wrap:wrap;">
+                <div style="flex:1;min-width:300px;">
+                    <h3 style="font-size:22px;font-weight:600;margin-bottom:15px;color:#ff3f6c;">Investor Relations</h3>
+                    <p style="margin-bottom:15px;line-height:1.6;">Hitaishi Fashion is committed to creating long-term value for our shareholders while maintaining the highest standards of corporate governance.</p>
+                    <p style="margin-bottom:20px;line-height:1.6;">We welcome inquiries from potential investors and analysts interested in learning more about our business strategy and financial performance.</p>
+                    <a href="#" style="background-color:#ff3f6c;color:white;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:600;display:inline-block;transition:background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#e0305f'" onmouseout="this.style.backgroundColor='#ff3f6c'">Investor Sign In</a>
+                </div>
+                <div style="flex:1;min-width:300px;">
+                    <img src="https://placehold.co/500x300/f5e6e8/282c3f?text=Investor+Relations" alt="Investor Relations" style="width:100%;border-radius:4px;height:auto;">
+                </div>
+            </div>
+            <div>
+                <h3 style="font-size:20px;font-weight:600;margin-bottom:20px;text-align:center;">Our Investment Partners</h3>
+                <div class="partners-logo-container" style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+                    <img src="https://placehold.co/150x60/f5f5f5/282c3f?text=Partner+1" alt="Partner 1" style="height:60px;object-fit:contain;max-width:150px;">
+                    <img src="https://placehold.co/150x60/f5f5f5/282c3f?text=Partner+2" alt="Partner 2" style="height:60px;object-fit:contain;max-width:150px;">
+                    <img src="https://placehold.co/150x60/f5f5f5/282c3f?text=Partner+3" alt="Partner 3" style="height:60px;object-fit:contain;max-width:150px;">
+                    <img src="https://placehold.co/150x60/f5f5f5/282c3f?text=Partner+4" alt="Partner 4" style="height:60px;object-fit:contain;max-width:150px;">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer" style="background-color:#282c3f;color:#a7a9ac;padding:40px 0;font-size:14px;">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;">
+        <div>
+            <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:20px;">Shop</h3>
+            <ul style="list-style:none;margin:0;padding:0;">
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Men</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Women</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Kids</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">New Arrivals</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Sales & Offers</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:20px;">Company</h3>
+            <ul style="list-style:none;margin:0;padding:0;">
+                <li style="margin-bottom:10px;"><a href="#about" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">About Us</a></li>
+                <li style="margin-bottom:10px;"><a href="#services" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Services</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Careers</a></li>
+                <li style="margin-bottom:10px;"><a href="#investors" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Investors</a></li>
+                <li style="margin-bottom:10px;"><a href="#contact" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:20px;">Customer Service</h3>
+            <ul style="list-style:none;margin:0;padding:0;">
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Help & FAQ</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Shipping</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Returns & Exchanges</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Size Guide</a></li>
+                <li style="margin-bottom:10px;"><a href="#" style="color:#a7a9ac;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:20px;">Connect</h3>
+            <p style="margin-bottom:5px;">Email: info@hitaishi-fashion.com</p>
+            <p style="margin-bottom:5px;">Phone: +91 1234567890</p>
+            <div class="social-icons" style="display:flex;gap:15px;margin-top:15px;">
+                <a href="#" style="color:#a7a9ac;font-size:20px;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color:#a7a9ac;font-size:20px;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color:#a7a9ac;font-size:20px;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color:#a7a9ac;font-size:20px;transition:color 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#a7a9ac'"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="copyright" style="text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid #3a3f4a;grid-column:1 / -1;">
+            <p>&copy; 2025 Hitaishi Fashion. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Get references to the elements
+    const categoriesBtn = document.getElementById('categoriesBtn');
+    const categoriesPanel = document.getElementById('categoriesPanel');
+
+    // Function to toggle categories panel visibility (for desktop and now mobile)
+    function toggleCategoriesPanel() {
+        if (categoriesPanel) { // Check if element exists
+            if (categoriesPanel.style.display === 'block') {
+                categoriesPanel.style.display = 'none';
+            } else {
+                categoriesPanel.style.display = 'block';
+            }
+        }
+    }
+
+    // Event listener for categories button
+    if (categoriesBtn) {
+        categoriesBtn.addEventListener('click', toggleCategoriesPanel);
+        // Close panel if clicked outside (optional, but good UX)
+        document.addEventListener('click', function(event) {
+            if (categoriesPanel && !categoriesPanel.contains(event.target) && !categoriesBtn.contains(event.target)) {
+                categoriesPanel.style.display = 'none';
+            }
+        });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Handle image fallbacks for placeholder images
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = function() {
+            this.src = 'https://placehold.co/500x300/f5e6e8/282c3f?text=Image+Not+Found'; // Generic fallback
+        };
+    });
+
+    // Logic to show/hide desktop nav vs mobile nav strip based on screen width
+    const desktopNav = document.querySelector('.main-nav.desktop-nav');
+    const mobileDesktopNavStrip = document.querySelector('.main-nav.mobile-desktop-nav-strip');
+
+    function adjustNavVisibility() {
+        if (window.innerWidth <= 992) {
+            if (desktopNav) desktopNav.style.display = 'none';
+            if (mobileDesktopNavStrip) mobileDesktopNavStrip.style.display = 'block';
+        } else {
+            if (desktopNav) desktopNav.style.display = 'block';
+            if (mobileDesktopNavStrip) mobileDesktopNavStrip.style.display = 'none';
+        }
+    }
+
+    // Initial call and on resize
+    adjustNavVisibility();
+    window.addEventListener('resize', adjustNavVisibility);
+</script>
+
+</body>
+</html>

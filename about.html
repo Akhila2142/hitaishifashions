@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hitaiahi Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * IMPORTANT: Media queries cannot be inlined.
+         * These rules are essential for mobile responsiveness
+         * and must remain in a <style> block.
+         */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5; /* Light grey background */
+            color: #282c3f; /* Dark text color */
+            line-height: 1.6; /* Improved readability */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding: 35px; /* Increased padding */
+            background: white;
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Softer, more prominent shadow */
+            overflow: hidden; /* Clear floats/prevent content overflow */
+        }
+
+        h2 {
+            font-size: 36px; /* Larger heading */
+            font-weight: 700;
+            color: #282c3f;
+            margin-bottom: 35px; /* More space below heading */
+            text-align: center;
+            padding-bottom: 15px; /* Space for border */
+            border-bottom: 2px solid #f0f0f0; /* Subtle underline */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 25px; /* Adjusted padding for tablets */
+                margin-bottom: 40px;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+
+            .content-row,
+            .values-grid {
+                flex-direction: column; /* Stack elements vertically */
+                gap: 30px; /* Adjusted gap */
+            }
+
+            .content-row > div,
+            .value-item {
+                min-width: unset;
+                width: 100%;
+            }
+
+            .content-row img {
+                margin-bottom: 20px; /* Space between image and text when stacked */
+            }
+
+            .value-item h3 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+            section {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            a.button {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;font-family:'Inter', sans-serif;background-color:#f5f5f5;color:#282c3f;line-height:1.6;">
+
+    <div class="container" style="max-width:1000px;margin:50px auto;padding:0 20px;">
+
+        <!-- Hero/Intro Section -->
+        <section style="margin-bottom:60px;padding:40px;background-color:#ff3f6c;color:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);text-align:center;">
+            <h1 style="font-size:48px;font-weight:700;margin-bottom:20px;color:white;">Welcome to Hitaiahi Fashion</h1>
+            <p style="font-size:18px;line-height:1.8;max-width:800px;margin:0 auto 30px;color:rgba(255,255,255,0.9);">
+                Your ultimate destination for trendy, high-quality, and affordable fashion. We believe in empowering you to express your unique style with confidence.
+            </p>
+            <a href="#" class="button" style="background-color:white;color:#ff3f6c;padding:15px 35px;border-radius:8px;text-decoration:none;font-weight:700;font-size:18px;display:inline-block;transition:background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;box-shadow:0 4px 10px rgba(0,0,0,0.2);" onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.3)'" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)'">
+                Explore Our Collections
+            </a>
+        </section>
+
+        <!-- Our Story Section -->
+        <section style="margin-bottom:60px;padding:35px;background:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+            <h2>Our Story</h2>
+            <div class="content-row" style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
+                <div style="flex:1;min-width:300px;">
+                    <img src="https://placehold.co/500x350/f5e6e8/282c3f?text=Our+Journey" alt="Our Story" style="width:100%;border-radius:8px;height:auto;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+                </div>
+                <div style="flex:1;min-width:300px;">
+                    <p style="margin-bottom:15px;font-size:16px;color:#535766;">
+                        Hitaiahi Fashion began in 2010 with a simple idea: to make fashion accessible and enjoyable for everyone. What started as a small online boutique quickly grew into a beloved brand, driven by our passion for style and commitment to our customers.
+                    </p>
+                    <p style="margin-bottom:15px;font-size:16px;color:#535766;">
+                        Over the years, we've expanded our collections, embraced sustainable practices, and built a community of fashion enthusiasts. Our journey has been one of continuous learning and evolution, always with our customers at the heart of everything we do.
+                    </p>
+                    <p style="font-size:16px;color:#535766;">
+                        From humble beginnings to a leading online fashion destination, Hitaiahi Fashion is proud to be a part of your style story.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission & Vision Section -->
+        <section style="margin-bottom:60px;padding:35px;background:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+            <h2>Our Mission & Vision</h2>
+            <div class="content-row" style="display:flex;gap:40px;flex-wrap:wrap;">
+                <div style="flex:1;min-width:300px;text-align:center;background-color:#fcfcfc;padding:30px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-top:5px solid #ff3f6c;">
+                    <h3 style="font-size:24px;font-weight:700;color:#ff3f6c;margin-bottom:15px;">Our Mission</h3>
+                    <p style="font-size:16px;color:#535766;">
+                        To empower individuals through fashion by offering a diverse range of high-quality, trend-setting, and affordable clothing that inspires confidence and self-expression.
+                    </p>
+                </div>
+                <div style="flex:1;min-width:300px;text-align:center;background-color:#fcfcfc;padding:30px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-top:5px solid #282c3f;">
+                    <h3 style="font-size:24px;font-weight:700;color:#282c3f;margin-bottom:15px;">Our Vision</h3>
+                    <p style="font-size:16px;color:#535766;">
+                        To be the most trusted and preferred online fashion destination, recognized for our exceptional customer experience, innovative styles, and commitment to ethical practices.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section style="margin-bottom:60px;padding:35px;background:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+            <h2>Our Values</h2>
+            <div class="values-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;">
+                <div class="value-item" style="background-color:#fcfcfc;padding:25px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:4px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:22px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">Customer Centricity</h3>
+                    <p style="font-size:15px;color:#535766;">
+                        Your satisfaction is our priority. We listen, adapt, and strive to exceed your expectations at every step.
+                    </p>
+                </div>
+                <div class="value-item" style="background-color:#fcfcfc;padding:25px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:4px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:22px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">Quality & Craftsmanship</h3>
+                    <p style="font-size:15px;color:#535766;">
+                        We are dedicated to offering products that meet the highest standards of quality, comfort, and durability.
+                    </p>
+                </div>
+                <div class="value-item" style="background-color:#fcfcfc;padding:25px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:4px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:22px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">Innovation & Trends</h3>
+                    <p style="font-size:15px;color:#535766;">
+                        Staying ahead of fashion curves, we bring you the latest trends and innovative designs to refresh your wardrobe.
+                    </p>
+                </div>
+                <div class="value-item" style="background-color:#fcfcfc;padding:25px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:4px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:22px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">Ethical & Sustainable</h3>
+                    <p style="font-size:15px;color:#535766;">
+                        We are committed to responsible sourcing and ethical production, contributing positively to our planet and communities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer Section -->
+        <section style="margin-bottom:60px;padding:35px;background:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+            <h2>What We Offer</h2>
+            <div class="content-row" style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
+                <div style="flex:1;min-width:300px;">
+                    <p style="margin-bottom:15px;font-size:16px;color:#535766;">
+                        At Hitaiahi Fashion, we curate a wide range of fashion products for every occasion and style preference. From everyday essentials to statement pieces, our collections are designed to cater to diverse tastes.
+                    </p>
+                    <p style="margin-bottom:15px;font-size:16px;color:#535766;">
+                        Explore our extensive selection including:
+                    </p>
+                    <ul style="list-style:none;padding:0;margin-bottom:20px;">
+                        <li style="margin-bottom:8px;font-size:16px;color:#535766;"><strong style="color:#ff3f6c;">Women's Wear:</strong> Trendy dresses, ethnic wear, casuals, and more.</li>
+                        <li style="margin-bottom:8px;font-size:16px;color:#535766;"><strong style="color:#ff3f6c;">Men's Wear:</strong> Stylish shirts, trousers, traditional outfits, and accessories.</li>
+                        <li style="margin-bottom:8px;font-size:16px;color:#535766;"><strong style="color:#ff3f6c;">Kids' Fashion:</strong> Adorable and comfortable clothing for all ages.</li>
+                        <li style="margin-bottom:8px;font-size:16px;color:#535766;"><strong style="color:#ff3f6c;">Accessories & Footwear:</strong> Complete your look with our curated selection.</li>
+                        <li style="font-size:16px;color:#535766;"><strong style="color:#ff3f6c;">Bridal & Special Occasion:</strong> Exquisite collections for your most memorable moments.</li>
+                    </ul>
+                    <a href="#" class="button" style="background-color:#ff3f6c;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px;display:inline-block;transition:background-color 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.backgroundColor='#e0305f'; this.style.boxShadow='0 6px 15px rgba(255,63,108,0.4)'" onmouseout="this.style.backgroundColor='#ff3f6c'; this.style.boxShadow='0 4px 10px rgba(255,63,108,0.3)'">
+                        Shop All Categories
+                    </a>
+                </div>
+                <div style="flex:1;min-width:300px;">
+                    <img src="https://placehold.co/500x350/f5e6e8/282c3f?text=Fashion+Variety" alt="Fashion Variety" style="width:100%;border-radius:8px;height:auto;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section style="margin-bottom:50px;padding:40px;background-color:#282c3f;color:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);text-align:center;">
+            <h2 style="font-size:36px;font-weight:700;margin-bottom:20px;color:white;border-bottom:2px solid rgba(255,255,255,0.2);">Join the Hitaiahi Family!</h2>
+            <p style="font-size:18px;line-height:1.8;max-width:800px;margin:0 auto 30px;color:rgba(255,255,255,0.9);">
+                Be a part of our growing community. Follow us on social media for the latest trends, exclusive offers, and behind-the-scenes content.
+            </p>
+            <a href="#" class="button" style="background-color:#ff3f6c;color:white;padding:15px 35px;border-radius:8px;text-decoration:none;font-weight:700;font-size:18px;display:inline-block;transition:background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;box-shadow:0 4px 10px rgba(255,63,108,0.3);" onmouseover="this.style.backgroundColor='#e0305f'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 15px rgba(255,63,108,0.4)'" onmouseout="this.style.backgroundColor='#ff3f6c'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(255,63,108,0.3)'">
+                Connect With Us
+            </a>
+        </section>
+
+    </div>
+
+    <script>
+        // Handle image fallbacks for placeholder images
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.src = 'https://placehold.co/500x350/f5e6e8/282c3f?text=Image+Not+Found'; // Generic fallback
+            };
+        });
+    </script>
+
+</body>
+</html>

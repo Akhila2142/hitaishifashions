@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitaishi Fashion Institute | Professional Fashion Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * IMPORTANT: Media queries cannot be inlined.
+         * These rules are essential for mobile responsiveness
+         * and must remain in a <style> block.
+         */
+        body {
+            margin: 0;
+            font-family: 'Inter', Arial, sans-serif; /* Changed to Inter for consistency */
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+            background: white;
+            margin-bottom: 60px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-radius: 15px;
+        }
+
+        h2 {
+            font-size: clamp(32px, 4.5vw, 48px);
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b6b;
+            border-radius: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .institute-hero {
+                padding: 100px 20px;
+            }
+            .institute-hero h1 {
+                font-size: clamp(32px, 6vw, 50px);
+            }
+            .institute-hero p {
+                font-size: clamp(16px, 2.5vw, 20px);
+            }
+            .institute-hero a {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 20px;
+                margin-bottom: 40px;
+            }
+            h2 {
+                font-size: clamp(28px, 4vw, 40px);
+                margin-bottom: 25px;
+            }
+
+            .content-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .content-row > div {
+                min-width: unset;
+                width: 100%;
+            }
+            .content-row img {
+                margin-bottom: 20px;
+            }
+            .content-row > div:last-child { /* For the nested card in About section */
+                position: static;
+                width: 100%;
+                margin-top: 30px;
+            }
+            .content-row > div:last-child > div { /* Inner div of nested card */
+                width: auto;
+            }
+
+            .programs-grid,
+            .faculty-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr; /* Single column layout */
+                gap: 25px;
+            }
+
+            .program-card,
+            .faculty-card,
+            .testimonial-card {
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Lighter shadow for mobile */
+            }
+
+            .faculty-card .faculty-image {
+                height: 250px;
+            }
+            .faculty-card .faculty-content {
+                padding: 20px;
+            }
+            .faculty-card .faculty-content h3 {
+                font-size: 20px;
+            }
+            .faculty-card .faculty-content p {
+                font-size: 14px;
+            }
+            .faculty-card .faculty-content div a {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .institute-hero {
+                padding: 80px 15px;
+            }
+            .institute-hero h1 {
+                font-size: clamp(28px, 8vw, 40px);
+            }
+            .institute-hero p {
+                font-size: clamp(15px, 3vw, 18px);
+            }
+            .institute-hero a {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+
+            section {
+                padding: 40px 15px;
+                margin-bottom: 30px;
+            }
+            h2 {
+                font-size: clamp(24px, 6vw, 32px);
+                margin-bottom: 20px;
+            }
+            p, ul li {
+                font-size: 14px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+
+            .program-card .program-content,
+            .testimonial-card {
+                padding: 20px;
+            }
+            .program-card .program-content h3 {
+                font-size: 20px;
+            }
+            .program-card .program-content span {
+                font-size: 18px;
+            }
+            .program-card .program-content a {
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+            .testimonial-card .author {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: 'Inter', Arial, sans-serif; background-color: #fafafa; color: #333;">
+
+<!-- Hero Section -->
+<div class="institute-hero" style="
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max'); /* Added Unsplash URL parameters for better quality */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure background doesn't bleed */
+">
+    <h1 style="
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 800;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        animation: fadeIn 1s ease-out;
+    ">
+        <span style="color: #ff6b6b;">Hitaishi Fashion Institute</span>
+    </h1>
+    <p style="
+        font-size: clamp(18px, 2.5vw, 24px);
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+        animation: fadeIn 1s ease-out 0.3s;
+        animation-fill-mode: both;
+    ">
+        Shaping the future of fashion through innovative education and hands-on training
+    </p>
+    <a href="#programs" style="
+        background: #ff6b6b;
+        color: white;
+        padding: 16px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+        animation: fadeIn 1s ease-out 0.6s;
+        animation-fill-mode: both;
+    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(255,107,107,0.6)'" 
+    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(255,107,107,0.4)'">
+        Explore Programs <i class="fas fa-arrow-down" style="margin-left: 8px;"></i>
+    </a>
+</div>
+
+<!-- About Institute Section -->
+<section style="
+    padding: 80px 20px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    margin-bottom: 60px;
+">
+    <div class="container" style="
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 50px;
+    ">
+        <div style="flex: 1; min-width: 300px; animation: slideInLeft 1s ease-out;">
+            <h2 style="
+                font-size: clamp(28px, 4vw, 42px);
+                font-weight: 800;
+                color: #333;
+                margin-bottom: 20px;
+                position: relative;
+                display: inline-block;
+            ">
+                About Our <span style="color: #ff6b6b;">Fashion Institute</span>
+                <span style="
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+                    border-radius: 2px;
+                "></span>
+            </h2>
+            <p style="
+                font-size: 16px;
+                color: #666;
+                line-height: 1.8;
+                margin-bottom: 25px;
+            ">
+                Established in 2010, Hitaishi Fashion Institute has been at the forefront of fashion education, nurturing creative talents and producing industry-ready professionals. Our state-of-the-art facilities and industry-experienced faculty provide an immersive learning environment.
+            </p>
+            <ul style="
+                margin-bottom: 30px;
+                padding-left: 20px;
+                color: #666;
+                list-style: none; /* Remove default list style */
+            ">
+                <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                    <i class="fas fa-check" style="color: #ff6b6b; position: absolute; left: 0; top: 3px;"></i> 15+ years of excellence in fashion education
+                </li>
+                <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                    <i class="fas fa-check" style="color: #ff6b6b; position: absolute; left: 0; top: 3px;"></i> 2000+ successful alumni worldwide
+                </li>
+                <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                    <i class="fas fa-check" style="color: #ff6b6b; position: absolute; left: 0; top: 3px;"></i> Industry partnerships with leading fashion houses
+                </li>
+                <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                    <i class="fas fa-check" style="color: #ff6b6b; position: absolute; left: 0; top: 3px;"></i> Hands-on training with modern equipment
+                </li>
+            </ul>
+            <a href="#" style="
+                background: #ff6b6b;
+                color: white;
+                padding: 14px 28px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                display: inline-block;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+            " onmouseover="this.style.background='#e05a5a'; this.style.boxShadow='0 8px 20px rgba(255,107,107,0.6)'" 
+            onmouseout="this.style.background='#ff6b6b'; this.style.boxShadow='0 5px 15px rgba(255,107,107,0.4)'">
+                Take Campus Tour <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+        </div>
+        <div style="flex: 1; min-width: 300px; position: relative; animation: slideInRight 1s ease-out;">
+            <div style="
+                width: 100%;
+                height: 400px;
+                background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+                background-size: cover;
+                background-position: center;
+                border-radius: 15px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            "></div>
+            <div style="
+                position: absolute;
+                bottom: -20px;
+                right: -20px;
+                background: white;
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                width: 60%;
+                min-width: 250px; /* Ensure it doesn't shrink too much on smaller screens */
+            ">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                ">
+                    <div style="
+                        width: 50px;
+                        height: 50px;
+                        background: rgba(255,107,107,0.1);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                    ">
+                        <i class="fas fa-award" style="font-size: 20px; color: #ff6b6b;"></i>
+                    </div>
+                    <div>
+                        <h4 style="
+                            font-size: 18px;
+                            font-weight: 700;
+                            margin: 0 0 5px;
+                            color: #333;
+                        ">
+                            Award Winning Institute
+                        </h4>
+                        <p style="
+                            font-size: 14px;
+                            color: #666;
+                            margin: 0;
+                        ">
+                            Best Fashion School 2022
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Programs Section -->
+<section id="programs" style="
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    margin-bottom: 60px;
+">
+    <div class="container" style="
+        max-width: 1200px;
+        margin: 0 auto;
+    ">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="
+                font-size: clamp(28px, 4vw, 42px);
+                font-weight: 800;
+                color: #333;
+                margin-bottom: 15px;
+            ">
+                Our <span style="color: #ff6b6b;">Fashion Programs</span>
+            </h2>
+            <p style="
+                font-size: clamp(16px, 2.5vw, 18px);
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.6;
+            ">
+                Comprehensive courses designed to launch your career in the fashion industry
+            </p>
+        </div>
+
+        <div class="programs-grid" style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        ">
+            <!-- Program 1 -->
+            <div class="program-card" style="
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                transition: all 0.4s ease;
+                animation: fadeIn 0.8s ease-out;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div class="program-image" style="
+                    height: 200px;
+                    background: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+                    background-size: cover;
+                    background-position: center;
+                    position: relative;
+                ">
+                    <div style="
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        background: rgba(255,107,107,0.9);
+                        padding: 5px 15px;
+                        border-radius: 50px;
+                        font-weight: 700;
+                        color: white;
+                        font-size: 14px;
+                    ">
+                        <i class="fas fa-clock" style="margin-right: 5px;"></i> 2 Years
+                    </div>
+                </div>
+                <div class="program-content" style="padding: 25px;">
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 15px;
+                    ">
+                        Fashion Design Diploma
+                    </h3>
+                    <p style="
+                        color: #666;
+                        margin-bottom: 20px;
+                        line-height: 1.6;
+                    ">
+                        Master the art of fashion design from concept to creation with our intensive diploma program.
+                    </p>
+                    <ul style="
+                        margin-bottom: 25px;
+                        padding-left: 20px;
+                        color: #666;
+                        list-style: disc; /* Use disc for bullet points */
+                    ">
+                        <li style="margin-bottom: 8px;">Pattern Making & Draping</li>
+                        <li style="margin-bottom: 8px;">Textile Science</li>
+                        <li style="margin-bottom: 8px;">Fashion Illustration</li>
+                    </ul>
+                    <div style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    ">
+                        <span style="
+                            font-size: 20px;
+                            font-weight: 700;
+                            color: #ff6b6b;
+                        ">
+                            $3,500/year
+                        </span>
+                        <a href="#" style="
+                            background: #ff6b6b;
+                            color: white;
+                            padding: 10px 20px;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            font-size: 14px;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#e05a5a'" 
+                        onmouseout="this.style.background='#ff6b6b'">
+                            Apply Now <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 2 -->
+            <div class="program-card" style="
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                transition: all 0.4s ease;
+                animation: fadeIn 0.8s ease-out 0.2s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div class="program-image" style="
+                    height: 200px;
+                    background: url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+                    background-size: cover;
+                    background-position: center;
+                    position: relative;
+                ">
+                    <div style="
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        background: rgba(107,107,255,0.9);
+                        padding: 5px 15px;
+                        border-radius: 50px;
+                        font-weight: 700;
+                        color: white;
+                        font-size: 14px;
+                    ">
+                        <i class="fas fa-clock" style="margin-right: 5px;"></i> 1 Year
+                    </div>
+                </div>
+                <div class="program-content" style="padding: 25px;">
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 15px;
+                    ">
+                        Fashion Marketing
+                    </h3>
+                    <p style="
+                        color: #666;
+                        margin-bottom: 20px;
+                        line-height: 1.6;
+                    ">
+                        Learn the business side of fashion with our comprehensive marketing and merchandising program.
+                    </p>
+                    <ul style="
+                        margin-bottom: 25px;
+                        padding-left: 20px;
+                        color: #666;
+                        list-style: disc;
+                    ">
+                        <li style="margin-bottom: 8px;">Brand Management</li>
+                        <li style="margin-bottom: 8px;">Digital Marketing</li>
+                        <li style="margin-bottom: 8px;">Retail Merchandising</li>
+                    </ul>
+                    <div style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    ">
+                        <span style="
+                            font-size: 20px;
+                            font-weight: 700;
+                            color: #6b6bff;
+                        ">
+                            $2,800/year
+                        </span>
+                        <a href="#" style="
+                            background: #6b6bff;
+                            color: white;
+                            padding: 10px 20px;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            font-size: 14px;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#5a5ae0'" 
+                        onmouseout="this.style.background='#6b6bff'">
+                            Apply Now <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 3 -->
+            <div class="program-card" style="
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                transition: all 0.4s ease;
+                animation: fadeIn 0.8s ease-out 0.4s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div class="program-image" style="
+                    height: 200px;
+                    background: url('https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+                    background-size: cover;
+                    background-position: center;
+                    position: relative;
+                ">
+                    <div style="
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        background: rgba(255,193,7,0.9);
+                        padding: 5px 15px;
+                        border-radius: 50px;
+                        font-weight: 700;
+                        color: #333;
+                        font-size: 14px;
+                    ">
+                        <i class="fas fa-clock" style="margin-right: 5px;"></i> 6 Months
+                    </div>
+                </div>
+                <div class="program-content" style="padding: 25px;">
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 15px;
+                    ">
+                        Textile Technology
+                    </h3>
+                    <p style="
+                        color: #666;
+                        margin-bottom: 20px;
+                        line-height: 1.6;
+                    ">
+                        Specialized training in textile science, fabric analysis, and sustainable material innovation.
+                    </p>
+                    <ul style="
+                        margin-bottom: 25px;
+                        padding-left: 20px;
+                        color: #666;
+                        list-style: disc;
+                    ">
+                        <li style="margin-bottom: 8px;">Fabric Construction</li>
+                        <li style="margin-bottom: 8px;">Dyeing & Printing</li>
+                        <li style="margin-bottom: 8px;">Sustainable Textiles</li>
+                    </ul>
+                    <div style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    ">
+                        <span style="
+                            font-size: 20px;
+                            font-weight: 700;
+                            color: #ffc107;
+                        ">
+                            $1,900/course
+                        </span>
+                        <a href="#" style="
+                            background: #ffc107;
+                            color: #333;
+                            padding: 10px 20px;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            font-size: 14px;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#e6b000'" 
+                        onmouseout="this.style.background='#ffc107'">
+                            Apply Now <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Faculty Section -->
+<section style="
+    padding: 80px 20px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    margin-bottom: 60px;
+">
+    <div class="container" style="
+        max-width: 1200px;
+        margin: 0 auto;
+    ">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="
+                font-size: clamp(28px, 4vw, 42px);
+                font-weight: 800;
+                color: #333;
+                margin-bottom: 15px;
+            ">
+                Meet Our <span style="color: #ff6b6b;">Expert Faculty</span>
+            </h2>
+            <p style="
+                font-size: clamp(16px, 2.5vw, 18px);
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.6;
+            ">
+                Learn from industry veterans and accomplished fashion professionals
+            </p>
+        </div>
+
+        <div class="faculty-grid" style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        ">
+            <!-- Faculty 1 -->
+            <div class="faculty-card" style="
+                background: #fff;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                transition: all 0.4s ease;
+                animation: fadeIn 0.8s ease-out;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div class="faculty-image" style="
+                    height: 300px;
+                    background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+                    background-size: cover;
+                    background-position: center;
+                "></div>
+                <div class="faculty-content" style="padding: 25px; text-align: center;">
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 5px;
+                    ">
+                        Priya Sharma
+                    </h3>
+                    <p style="
+                        color: #ff6b6b;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                    ">
+                        Head of Fashion Design
+                    </p>
+                    <p style="
+                        color: #666;
+                        margin-bottom: 20px;
+                        font-size: 15px;
+                        line-height: 1.6;
+                    ">
+                        Former lead designer at Sabyasachi with 15+ years in haute couture and luxury fashion.
+                    </p>
+                    <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 15px;
+                    ">
+                        <a href="#" style="
+                            width: 35px;
+                            height: 35px;
+                            background: #f5f5f5;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #666;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#ff6b6b'; this.style.color='white'" 
+                        onmouseout="this.style.background='#f5f5f5'; this.style.color='#666'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="
+                            width: 35px;
+                            height: 35px;
+                            background: #f5f5f5;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #666;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#ff6b6b'; this.style.color='white'" 
+                        onmouseout="this.style.background='#f5f5f5'; this.style.color='#666'">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty 2 -->
+            <div class="faculty-card" style="
+                background: #fff;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                transition: all 0.4s ease;
+                animation: fadeIn 0.8s ease-out 0.2s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div class="faculty-image" style="
+                    height: 300px;
+                    background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+                    background-size: cover;
+                    background-position: center;
+                "></div>
+                <div class="faculty-content" style="padding: 25px; text-align: center;">
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 5px;
+                    ">
+                        Rajiv Malhotra
+                    </h3>
+                    <p style="
+                        color: #6b6bff;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                    ">
+                        Fashion Marketing Director
+                    </p>
+                    <p style="
+                        color: #666;
+                        margin-bottom: 20px;
+                        font-size: 15px;
+                        line-height: 1.6;
+                    ">
+                        Ex-VP of Marketing at Myntra with expertise in digital fashion retail and brand strategy.
+                    </p>
+                    <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 15px;
+                    ">
+                        <a href="#" style="
+                            width: 35px;
+                            height: 35px;
+                            background: #f5f5f5;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #666;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#6b6bff'; this.style.color='white'" 
+                        onmouseout="this.style.background='#f5f5f5'; this.style.color='#666'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="
+                            width: 35px;
+                            height: 35px;
+                            background: #f5f5f5;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #666;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#6b6bff'; this.style.color='white'" 
+                        onmouseout="this.style.background='#f5f5f5'; this.style.color='#666'">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty 3 -->
+            <div class="faculty-card" style="
+                background: #fff;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                transition: all 0.4s ease;
+                animation: fadeIn 0.8s ease-out 0.4s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div class="faculty-image" style="
+                    height: 300px;
+                    background: url('https://images.unsplash.com/photo-1573497019706-4e0b443d1a0b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max');
+                    background-size: cover;
+                    background-position: center;
+                "></div>
+                <div class="faculty-content" style="padding: 25px; text-align: center;">
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 5px;
+                    ">
+                        Nandini Patel
+                    </h3>
+                    <p style="
+                        color: #4caf50;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                    ">
+                        Textile Technology Expert
+                    </p>
+                    <p style="
+                        color: #666;
+                        margin-bottom: 20px;
+                        font-size: 15px;
+                        line-height: 1.6;
+                    ">
+                        Sustainable textile pioneer with patents in eco-friendly fabric technologies.
+                    </p>
+                    <div style="
+                        display: flex;
+                        justify-content: center;
+                        gap: 15px;
+                    ">
+                        <a href="#" style="
+                            width: 35px;
+                            height: 35px;
+                            background: #f5f5f5;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #666;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#4caf50'; this.style.color='white'" 
+                        onmouseout="this.style.background='#f5f5f5'; this.style.color='#666'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="
+                            width: 35px;
+                            height: 35px;
+                            background: #f5f5f5;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #666;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='#4caf50'; this.style.color='white'" 
+                        onmouseout="this.style.background='#f5f5f5'; this.style.color='#666'">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section style="
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    margin-bottom: 60px;
+">
+    <div class="container" style="
+        max-width: 1200px;
+        margin: 0 auto;
+    ">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="
+                font-size: clamp(28px, 4vw, 42px);
+                font-weight: 800;
+                color: #333;
+                margin-bottom: 15px;
+            ">
+                What Our <span style="color: #ff6b6b;">Alumni Say</span>
+            </h2>
+            <p style="
+                font-size: clamp(16px, 2.5vw, 18px);
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.6;
+            ">
+                Hear from our successful graduates who are making a mark in the fashion world.
+            </p>
+        </div>
+
+        <div class="testimonials-grid" style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        ">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card" style="
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                animation: fadeIn 0.8s ease-out;
+            " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alumni 1" style="
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        border: 3px solid #ff6b6b;
+                        box-shadow: 0 0 10px rgba(255,107,107,0.3);
+                    ">
+                </div>
+                <p style="
+                    font-style: italic;
+                    color: #555;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    font-size: 15px;
+                ">
+                    "Hitaishi Fashion Institute provided me with the foundational knowledge and practical skills I needed to excel in the industry. The faculty's guidance was invaluable!"
+                </p>
+                <p class="author" style="
+                    font-weight: 700;
+                    color: #ff6b6b;
+                    text-align: center;
+                    font-size: 16px;
+                ">
+                    - Anjali Singh, Fashion Designer at Vogue India
+                </p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card" style="
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                animation: fadeIn 0.8s ease-out 0.2s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alumni 2" style="
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        border: 3px solid #6b6bff;
+                        box-shadow: 0 0 10px rgba(107,107,255,0.3);
+                    ">
+                </div>
+                <p style="
+                    font-style: italic;
+                    color: #555;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    font-size: 15px;
+                ">
+                    "The Fashion Marketing program was a game-changer. I gained practical insights and networking opportunities that directly led to my current role."
+                </p>
+                <p class="author" style="
+                    font-weight: 700;
+                    color: #6b6bff;
+                    text-align: center;
+                    font-size: 16px;
+                ">
+                    - Rohit Kumar, Marketing Manager at Myntra
+                </p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card" style="
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                animation: fadeIn 0.8s ease-out 0.4s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Alumni 3" style="
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        border: 3px solid #ffc107;
+                        box-shadow: 0 0 10px rgba(255,193,7,0.3);
+                    ">
+                </div>
+                <p style="
+                    font-style: italic;
+                    color: #555;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    font-size: 15px;
+                ">
+                    "The Textile Technology course was incredibly insightful. I now work with sustainable fabrics, a field I'm passionate about, thanks to Hitaishi."
+                </p>
+                <p class="author" style="
+                    font-weight: 700;
+                    color: #ffc107;
+                    text-align: center;
+                    font-size: 16px;
+                ">
+                    - Pooja Devi, Textile Innovator at Fabindia
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section style="
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #282c3f 0%, #4a5268 100%);
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    margin-bottom: 50px;
+">
+    <div class="container" style="
+        max-width: 1000px;
+        margin: 0 auto;
+    ">
+        <h2 style="
+            font-size: clamp(32px, 4.5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white;
+        ">
+            Ready to Start Your Fashion Journey?
+        </h2>
+        <p style="
+            font-size: clamp(18px, 2.5vw, 24px);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        ">
+            Join Hitaishi Fashion Institute and turn your passion into a thriving career.
+        </p>
+        <a href="#programs" class="button" style="
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+            animation: pulse 2s infinite;
+        " onmouseover="this.style.background='#e05a5a'; this.style.boxShadow='0 8px 20px rgba(255,107,107,0.6)'; this.style.animation='none'" 
+        onmouseout="this.style.background='#ff6b6b'; this.style.boxShadow='0 5px 15px rgba(255,107,107,0.4)'; this.style.animation='pulse 2s infinite'">
+            Apply Today! <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+        </a>
+    </div>
+</section>
+
+<script>
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Handle image fallbacks for placeholder images (if any were used)
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = function() {
+            this.src = 'https://placehold.co/500x350/f5e6e8/282c3f?text=Image+Not+Found'; // Generic fallback
+        };
+    });
+</script>
+
+</body>
+</html>

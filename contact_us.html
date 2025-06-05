@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & Help - Hitaiahi Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * IMPORTANT: Media queries cannot be inlined.
+         * These rules are essential for mobile responsiveness
+         * and must remain in a <style> block.
+         */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5; /* Light grey background */
+            color: #282c3f; /* Dark text color */
+            line-height: 1.6; /* Improved readability */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding: 35px; /* Increased padding */
+            background: white;
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Softer, more prominent shadow */
+        }
+
+        h2 {
+            font-size: 36px; /* Larger heading */
+            font-weight: 700;
+            color: #282c3f;
+            margin-bottom: 35px; /* More space below heading */
+            text-align: center;
+            padding-bottom: 15px; /* Space for border */
+            border-bottom: 2px solid #f0f0f0; /* Subtle underline */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 25px; /* Adjusted padding for tablets */
+                margin-bottom: 40px;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+
+            /* Contact Info and Form layout */
+            .contact-content-wrapper,
+            .help-faq-grid {
+                flex-direction: column;
+                gap: 30px; /* Adjusted gap */
+            }
+
+            .contact-info-card,
+            .contact-form-card,
+            .faq-item {
+                min-width: unset;
+                width: 100%;
+            }
+
+            /* FAQ question font size */
+            .faq-item h3 {
+                font-size: 19px;
+            }
+
+            /* Contact form input widths */
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form textarea {
+                width: calc(100% - 20px); /* Adjust for padding on smaller screens */
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+            section {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            .contact-info-card p,
+            .contact-form label,
+            .contact-form input,
+            .contact-form textarea,
+            .faq-item p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            .faq-item h3 {
+                font-size: 17px;
+            }
+            .contact-form button {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;font-family:'Inter', sans-serif;background-color:#f5f5f5;color:#282c3f;line-height:1.6;">
+
+    <div class="container" style="max-width:1000px;margin:50px auto;padding:0 20px;">
+
+        <!-- Contact Us Section -->
+        <section id="contact" style="margin-bottom:60px;padding:35px;background:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+            <h2 style="font-size:36px;font-weight:700;color:#282c3f;margin-bottom:35px;text-align:center;padding-bottom:15px;border-bottom:2px solid #f0f0f0;">Contact Us</h2>
+            <div class="contact-content-wrapper" style="display:flex;gap:40px;flex-wrap:wrap;">
+                <div class="contact-info-card" style="flex:1;background:white;border-radius:10px;padding:30px;box-shadow:0 4px 10px rgba(0,0,0,0.05);min-width:300px;border:1px solid #f0f0f0;">
+                    <h3 style="font-size:22px;font-weight:700;margin-bottom:25px;color:#ff3f6c;">Get In Touch</h3>
+                    <div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dashed #e0e0e0;">
+                        <h4 style="font-size:18px;font-weight:600;margin-bottom:12px;color:#282c3f;">Corporate Office</h4>
+                        <p style="margin-bottom:8px;font-size:15px;">Hitaishi Fashion Ltd.</p>
+                        <p style="margin-bottom:8px;font-size:15px;">Plot no:21,Flat 102,Cvr Residency, Pragati Nagar</p>
+                        <p style="margin-bottom:0;font-size:15px;">Hyderbad -500090,Telangana, India</p>
+                    </div>
+                    <div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dashed #e0e0e0;">
+                        <h4 style="font-size:18px;font-weight:600;margin-bottom:12px;color:#282c3f;">Contact Information</h4>
+                        <p style="margin-bottom:8px;font-size:15px;"><i class="fas fa-phone" style="margin-right:10px;color:#ff3f6c;"></i> +91 87901 70525</p>
+                        <p style="margin-bottom:8px;font-size:15px;"><i class="fas fa-envelope" style="margin-right:10px;color:#ff3f6c;"></i> info@hitaishifashion.com</p>
+                        <p style="margin-bottom:0;font-size:15px;"><i class="fas fa-clock" style="margin-right:10px;color:#ff3f6c;"></i> Mon-Sat: 9:00 AM - 8:00 PM</p>
+                    </div>
+                    <!-- Call Now Section -->
+                    <div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dashed #e0e0e0;text-align:center;">
+                        <h4 style="font-size:18px;font-weight:600;margin-bottom:15px;color:#282c3f;">Need Immediate Assistance?</h4>
+                        <p style="font-size:24px;font-weight:700;color:#ff3f6c;margin-bottom:20px;"><i class="fas fa-phone-alt" style="margin-right:10px;"></i> +91 87901 70525</p>
+                        <a href="tel:+91 87901 70525" style="background-color:#ff3f6c;color:white;padding:15px 30px;border-radius:8px;text-decoration:none;font-weight:700;font-size:18px;display:inline-block;transition:background-color 0.3s ease, box-shadow 0.3s ease;box-shadow:0 4px 10px rgba(255,63,108,0.3);" onmouseover="this.style.backgroundColor='#e0305f'; this.style.boxShadow='0 6px 15px rgba(255,63,108,0.4)'" onmouseout="this.style.backgroundColor='#ff3f6c'; this.style.boxShadow='0 4px 10px rgba(255,63,108,0.3)'">
+                            <i class="fas fa-phone-volume" style="margin-right:10px;"></i> Call Now
+                        </a>
+                    </div>
+                    <div>
+                        <h4 style="font-size:18px;font-weight:600;margin-bottom:15px;color:#282c3f;">Follow Us</h4>
+                       <!-- Font Awesome CDN (required for icons) -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+                        <div class="social-links" style="display:flex;gap:20px;">
+                        <a href="https://www.facebook.com/" target="_blank" title="Facebook" style="color:#282c3f;font-size:24px;transition:color 0.3s ease;" 
+                            onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" title="Twitter" style="color:#282c3f;font-size:24px;transition:color 0.3s ease;" 
+                            onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" title="Instagram" style="color:#282c3f;font-size:24px;transition:color 0.3s ease;" 
+                            onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn" style="color:#282c3f;font-size:24px;transition:color 0.3s ease;" 
+                            onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.pinterest.com/" target="_blank" title="Pinterest" style="color:#282c3f;font-size:24px;transition:color 0.3s ease;" 
+                            onmouseover="this.style.color='#ff3f6c'" onmouseout="this.style.color='#282c3f'">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="contact-form-card" style="flex:1;background:white;border-radius:10px;padding:30px;box-shadow:0 4px 10px rgba(0,0,0,0.05);min-width:300px;border:1px solid #f0f0f0;">
+                    <h3 style="font-size:22px;font-weight:700;margin-bottom:25px;color:#ff3f6c;">Send Us a Message</h3>
+                    <form class="contact-form">
+                        <label for="name" style="display:block;margin-bottom:8px;font-weight:600;font-size:15px;color:#535766;">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required style="width:calc(100% - 28px);padding:14px;margin-bottom:25px;border:1px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none;transition:border-color 0.3s ease;" onfocus="this.style.borderColor='#ff3f6c'" onblur="this.style.borderColor='#e0e0e0'">
+
+                        <label for="email" style="display:block;margin-bottom:8px;font-weight:600;font-size:15px;color:#535766;">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required style="width:calc(100% - 28px);padding:14px;margin-bottom:25px;border:1px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none;transition:border-color 0.3s ease;" onfocus="this.style.borderColor='#ff3f6c'" onblur="this.style.borderColor='#e0e0e0'">
+
+                        <label for="subject" style="display:block;margin-bottom:8px;font-weight:600;font-size:15px;color:#535766;">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject of your message" required style="width:calc(100% - 28px);padding:14px;margin-bottom:25px;border:1px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none;transition:border-color 0.3s ease;" onfocus="this.style.borderColor='#ff3f6c'" onblur="this.style.borderColor='#e0e0e0'">
+
+                        <label for="message" style="display:block;margin-bottom:8px;font-weight:600;font-size:15px;color:#535766;">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message" required style="width:calc(100% - 28px);padding:14px;margin-bottom:30px;border:1px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none;resize:vertical;min-height:120px;transition:border-color 0.3s ease;" onfocus="this.style.borderColor='#ff3f6c'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+
+                        <button type="submit" style="background-color:#ff3f6c;color:white;padding:15px 30px;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:17px;transition:background-color 0.3s ease, box-shadow 0.3s ease;box-shadow:0 4px 10px rgba(255,63,108,0.3);" onmouseover="this.style.backgroundColor='#e0305f'; this.style.boxShadow='0 6px 15px rgba(255,63,108,0.4)'" onmouseout="this.style.backgroundColor='#ff3f6c'; this.style.boxShadow='0 4px 10px rgba(255,63,108,0.3)'">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" style="margin-bottom:50px;padding:35px;background:white;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+            <h2 style="font-size:36px;font-weight:700;color:#282c3f;margin-bottom:35px;text-align:center;padding-bottom:15px;border-bottom:2px solid #f0f0f0;">Help & FAQs</h2>
+            <div class="help-faq-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;">
+                <div class="faq-item" style="background-color:#fcfcfc;padding:25px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:5px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:20px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">How do I track my order?</h3>
+                    <p style="font-size:15px;color:#535766;">You can track your order using the "Track Order" link in the top header of our website. Simply enter your order ID to get the latest updates.</p>
+                </div>
+                <div class="faq-item" style="background-color:#fcfcfc;padding:25px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:5px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:20px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">What is your return policy?</h3>
+                    <p style="font-size:15px;color:#535766;">We offer a hassle-free 30-day return policy on most items. Please visit our "Returns & Exchanges" section in the footer for detailed information.</p>
+                </div>
+                <div class="faq-item" style="background-color:#fcfcfc;padding:25px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:5px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:20px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">How can I change my shipping address?</h3>
+                    <p style="font-size:15px;color:#535766;">If your order has not yet shipped, you might be able to change your address. Please contact customer support immediately for assistance.</p>
+                </div>
+                <div class="faq-item" style="background-color:#fcfcfc;padding:25px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:5px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:20px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">Do you offer international shipping?</h3>
+                    <p style="font-size:15px;color:#535766;">Currently, we only ship within India. We are working to expand our shipping services to other countries soon.</p>
+                </div>
+                <div class="faq-item" style="background-color:#fcfcfc;padding:25px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:5px solid #ff3f6c;transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                    <h3 style="font-size:20px;font-weight:600;color:#ff3f6c;margin-bottom:12px;">How do I apply a discount code?</h3>
+                    <p style="font-size:15px;color:#535766;">You can apply your discount code during the checkout process. Look for the "Apply Discount Code" field before finalizing your purchase.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:50px;">
+                <p style="font-size:16px;color:#535766;margin-bottom:25px;">Still have questions? Our customer support team is here to help!</p>
+                <a href="#contact" style="background-color:#ff3f6c;color:white;padding:15px 30px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;transition:background-color 0.3s ease, box-shadow 0.3s ease;box-shadow:0 4px 10px rgba(255,63,108,0.3);" onmouseover="this.style.backgroundColor='#e0305f'; this.style.boxShadow='0 6px 15px rgba(255,63,108,0.4)'" onmouseout="this.style.backgroundColor='#ff3f6c'; this.style.boxShadow='0 4px 10px rgba(255,63,108,0.3)'">Contact Customer Support</a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Handle image fallbacks for placeholder images
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.src = 'https://placehold.co/500x300/f5e6e8/282c3f?text=Image+Not+Found'; // Generic fallback
+            };
+        });
+
+        // Smooth scrolling for internal links (e.g., "Contact Customer Support" button)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

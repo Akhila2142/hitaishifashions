@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Fashion Services | Hitaishi Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="margin: 0; font-family: 'Poppins', Arial, sans-serif; background-color: #fafafa;">
+
+<!-- Hero Section -->
+<div class="services-hero" style="
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+">
+    <h1 style="
+        font-size: clamp(36px, 5vw, 60px);
+        font-weight: 800;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    ">
+        Elevate Your Style With Our<br>
+        <span style="color: #ff6b6b;">Premium Services</span>
+    </h1>
+    <p style="
+        font-size: clamp(16px, 2.5vw, 20px);
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+    ">
+        Discover bespoke fashion solutions tailored to your unique personality and lifestyle needs.
+    </p>
+    <a href="#services" style="
+        background: #ff6b6b;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(255,107,107,0.6)'" 
+    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(255,107,107,0.4)'">
+        Explore Services <i class="fas fa-arrow-down" style="margin-left: 8px;"></i>
+    </a>
+</div>
+
+<!-- Services Section -->
+<section id="services" style="
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+">
+    <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        ">
+            Our <span style="color: #ff6b6b;">Signature Services</span>
+            <span style="
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+                border-radius: 2px;
+            "></span>
+        </h2>
+        <p style="
+            font-size: clamp(16px, 2.5vw, 18px);
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        ">
+            Each service is meticulously crafted to transform your wardrobe and boost your confidence
+        </p>
+    </div>
+
+    <div class="services-grid" style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    ">
+        <!-- Service 1 -->
+        <div class="service-card" style="
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            animation: fadeIn 0.8s ease-out;
+        " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+            <div class="service-image" style="
+                height: 200px;
+                background: url('https://images.unsplash.com/photo-1596704017256-9a8a8b8b8b8b?ixlib=rb-4.0.3');
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            ">
+                <div style="
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background: rgba(255,255,255,0.9);
+                    padding: 8px 15px;
+                    border-radius: 50px;
+                    font-weight: 700;
+                    color: #ff6b6b;
+                    font-size: 14px;
+                ">
+                    <i class="fas fa-star" style="margin-right: 5px;"></i> Most Popular
+                </div>
+            </div>
+            <div class="service-content" style="padding: 25px;">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: rgba(255,107,107,0.1);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                    ">
+                        <i class="fas fa-cut" style="font-size: 24px; color: #ff6b6b;"></i>
+                    </div>
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin: 0;
+                    ">
+                        Custom Tailoring
+                    </h3>
+                </div>
+                <p style="
+                    color: #666;
+                    margin-bottom: 20px;
+                    line-height: 1.6;
+                ">
+                    Bespoke clothing crafted to your exact measurements with premium fabrics. Perfect fit guaranteed with 3 free adjustments.
+                </p>
+                <ul style="
+                    margin-bottom: 25px;
+                    padding-left: 20px;
+                    color: #666;
+                ">
+                    <li style="margin-bottom: 8px;">Personalized consultations</li>
+                    <li style="margin-bottom: 8px;">500+ fabric options</li>
+                    <li style="margin-bottom: 8px;">2-week delivery</li>
+                </ul>
+                <div style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                ">
+                    <span style="
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #ff6b6b;
+                    ">
+                        From $199
+                    </span>
+                    <a href="#" style="
+                        background: #ff6b6b;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 50px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 14px;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='#e05a5a'" 
+                    onmouseout="this.style.background='#ff6b6b'">
+                        Book Now <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card" style="
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            animation: fadeIn 0.8s ease-out 0.2s;
+            animation-fill-mode: both;
+        " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+            <div class="service-image" style="
+                height: 200px;
+                background: url('https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-4.0.3');
+                background-size: cover;
+                background-position: center;
+            "></div>
+            <div class="service-content" style="padding: 25px;">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: rgba(107,107,255,0.1);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                    ">
+                        <i class="fas fa-tshirt" style="font-size: 24px; color: #6b6bff;"></i>
+                    </div>
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin: 0;
+                    ">
+                        Wardrobe Styling
+                    </h3>
+                </div>
+                <p style="
+                    color: #666;
+                    margin-bottom: 20px;
+                    line-height: 1.6;
+                ">
+                    Complete style transformation with our expert stylists. We'll curate looks for your body type, lifestyle and personality.
+                </p>
+                <ul style="
+                    margin-bottom: 25px;
+                    padding-left: 20px;
+                    color: #666;
+                ">
+                    <li style="margin-bottom: 8px;">Personal color analysis</li>
+                    <li style="margin-bottom: 8px;">Body shape assessment</li>
+                    <li style="margin-bottom: 8px;">Seasonal wardrobe planning</li>
+                </ul>
+                <div style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                ">
+                    <span style="
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #6b6bff;
+                    ">
+                        From $299
+                    </span>
+                    <a href="#" style="
+                        background: #6b6bff;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 50px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 14px;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='#5a5ae0'" 
+                    onmouseout="this.style.background='#6b6bff'">
+                        Book Now <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" style="
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            animation: fadeIn 0.8s ease-out 0.4s;
+            animation-fill-mode: both;
+        " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+            <div class="service-image" style="
+                height: 200px;
+                background: url('https://images.unsplash.com/photo-1519689076051-5c96853f8e1a?ixlib=rb-4.0.3');
+                background-size: cover;
+                background-position: center;
+            "></div>
+            <div class="service-content" style="padding: 25px;">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: rgba(255,193,7,0.1);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                    ">
+                        <i class="fas fa-ring" style="font-size: 24px; color: #ffc107;"></i>
+                    </div>
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin: 0;
+                    ">
+                        Bridal Services
+                    </h3>
+                </div>
+                <p style="
+                    color: #666;
+                    margin-bottom: 20px;
+                    line-height: 1.6;
+                ">
+                    Complete wedding attire solutions including custom bridal gowns, groom suits, and bridesmaid dresses.
+                </p>
+                <ul style="
+                    margin-bottom: 25px;
+                    padding-left: 20px;
+                    color: #666;
+                ">
+                    <li style="margin-bottom: 8px;">Free design consultation</li>
+                    <li style="margin-bottom: 8px;">Luxury fabrics</li>
+                    <li style="margin-bottom: 8px;">6-month production timeline</li>
+                </ul>
+                <div style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                ">
+                    <span style="
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #ffc107;
+                    ">
+                        From $999
+                    </span>
+                    <a href="#" style="
+                        background: #ffc107;
+                        color: #333;
+                        padding: 10px 20px;
+                        border-radius: 50px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 14px;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='#e6b000'" 
+                    onmouseout="this.style.background='#ffc107'">
+                        Book Now <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" style="
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            animation: fadeIn 0.8s ease-out 0.6s;
+            animation-fill-mode: both;
+        " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+            <div class="service-image" style="
+                height: 200px;
+                background: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3');
+                background-size: cover;
+                background-position: center;
+            "></div>
+            <div class="service-content" style="padding: 25px;">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: rgba(76,175,80,0.1);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                    ">
+                        <i class="fas fa-business-time" style="font-size: 24px; color: #4caf50;"></i>
+                    </div>
+                    <h3 style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #333;
+                        margin: 0;
+                    ">
+                        Corporate Wear
+                    </h3>
+                </div>
+                <p style="
+                    color: #666;
+                    margin-bottom: 20px;
+                    line-height: 1.6;
+                ">
+                    Professional uniform solutions for businesses with custom branding options and bulk discounts.
+                </p>
+                <ul style="
+                    margin-bottom: 25px;
+                    padding-left: 20px;
+                    color: #666;
+                ">
+                    <li style="margin-bottom: 8px;">Branded embroidery</li>
+                    <li style="margin-bottom: 8px;">Multiple style options</li>
+                    <li style="margin-bottom: 8px;">Bulk order discounts</li>
+                </ul>
+                <div style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                ">
+                    <span style="
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #4caf50;
+                    ">
+                        From $89/pc
+                    </span>
+                    <a href="#" style="
+                        background: #4caf50;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 50px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 14px;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='#3d8b40'" 
+                    onmouseout="this.style.background='#4caf50'">
+                        Book Now <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- How It Works Section -->
+<section style="
+    padding: 80px 20px;
+    background: white;
+    position: relative;
+">
+    <div style="
+        max-width: 1200px;
+        margin: 0 auto;
+    ">
+        <h2 style="
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        ">
+            How Our <span style="color: #ff6b6b;">Services Work</span>
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+                border-radius: 2px;
+            "></span>
+        </h2>
+        <p style="
+            font-size: clamp(16px, 2.5vw, 18px);
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+            line-height: 1.6;
+        ">
+            Our simple 3-step process ensures a seamless experience from concept to completion
+        </p>
+
+        <div class="how-it-works-grid" style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        ">
+            <!-- Step 1 -->
+            <div class="step-card" style="
+                background: #fff;
+                padding: 35px 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                z-index: 1;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 5px;
+                    background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+                "></div>
+                <div style="
+                    width: 70px;
+                    height: 70px;
+                    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 25px;
+                    font-size: 30px;
+                    font-weight: 800;
+                    box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+                ">
+                    1
+                </div>
+                <h3 style="
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #333;
+                    margin-bottom: 15px;
+                ">
+                    Consultation
+                </h3>
+                <p style="
+                    color: #666;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                ">
+                    Schedule a free consultation to discuss your needs, style preferences, and vision with our fashion experts.
+                </p>
+                <div style="
+                    font-size: 14px;
+                    color: #ff6b6b;
+                    font-weight: 600;
+                ">
+                    <i class="fas fa-clock" style="margin-right: 5px;"></i> 30-60 minutes
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card" style="
+                background: #fff;
+                padding: 35px 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                z-index: 1;
+                animation: fadeIn 0.8s ease-out 0.2s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 5px;
+                    background: linear-gradient(to right, #6b6bff, #8e8eff);
+                "></div>
+                <div style="
+                    width: 70px;
+                    height: 70px;
+                    background: linear-gradient(135deg, #6b6bff, #8e8eff);
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 25px;
+                    font-size: 30px;
+                    font-weight: 800;
+                    box-shadow: 0 5px 15px rgba(107,107,255,0.3);
+                ">
+                    2
+                </div>
+                <h3 style="
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #333;
+                    margin-bottom: 15px;
+                ">
+                    Design & Plan
+                </h3>
+                <p style="
+                    color: #666;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                ">
+                    Our team creates a tailored plan or design concept, incorporating your feedback and our expertise.
+                </p>
+                <div style="
+                    font-size: 14px;
+                    color: #6b6bff;
+                    font-weight: 600;
+                ">
+                    <i class="fas fa-edit" style="margin-right: 5px;"></i> 1-3 days
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card" style="
+                background: #fff;
+                padding: 35px 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                z-index: 1;
+                animation: fadeIn 0.8s ease-out 0.4s;
+                animation-fill-mode: both;
+            " onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.12)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.08)'">
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 5px;
+                    background: linear-gradient(to right, #4caf50, #8bc34a);
+                "></div>
+                <div style="
+                    width: 70px;
+                    height: 70px;
+                    background: linear-gradient(135deg, #4caf50, #8bc34a);
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 25px;
+                    font-size: 30px;
+                    font-weight: 800;
+                    box-shadow: 0 5px 15px rgba(76,175,80,0.3);
+                ">
+                    3
+                </div>
+                <h3 style="
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #333;
+                    margin-bottom: 15px;
+                ">
+                    Execution & Delivery
+                </h3>
+                <p style="
+                    color: #666;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                ">
+                    We meticulously execute the plan, ensuring timely delivery and impeccable quality of service or product.
+                </p>
+                <div style="
+                    font-size: 14px;
+                    color: #4caf50;
+                    font-weight: 600;
+                ">
+                    <i class="fas fa-calendar-check" style="margin-right: 5px;"></i> 1-4 weeks
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section style="
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    padding: 80px 20px;
+">
+    <div style="
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    ">
+        <h2 style="
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 15px;
+        ">
+            What Our <span style="color: #ff6b6b;">Clients Say</span>
+        </h2>
+        <p style="
+            font-size: clamp(16px, 2.5vw, 18px);
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        ">
+            Don't just take our word for it - hear from our satisfied customers
+        </p>
+
+        <div style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        ">
+            <!-- Testimonial 1 -->
+            <div style="
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+                text-align: left;
+                position: relative;
+            ">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                ">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" style="
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        margin-right: 15px;
+                    ">
+                    <div>
+                        <h4 style="
+                            font-size: 18px;
+                            font-weight: 700;
+                            margin: 0 0 5px;
+                            color: #333;
+                        ">
+                            Sarah Johnson
+                        </h4>
+                        <div style="
+                            color: #ffc107;
+                            font-size: 14px;
+                        ">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p style="
+                    color: #666;
+                    font-style: italic;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                ">
+                    "The custom tailoring service transformed how I dress. The fit is perfect and I get compliments every time I wear their pieces. Worth every penny!"
+                </p>
+                <div style="
+                    font-size: 14px;
+                    color: #999;
+                ">
+                    <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> March 15, 2023
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div style="
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+                text-align: left;
+                position: relative;
+            ">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                ">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" style="
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        margin-right: 15px;
+                    ">
+                    <div>
+                        <h4 style="
+                            font-size: 18px;
+                            font-weight: 700;
+                            margin: 0 0 5px;
+                            color: #333;
+                        ">
+                            Michael Chen
+                        </h4>
+                        <div style="
+                            color: #ffc107;
+                            font-size: 14px;
+                        ">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p style="
+                    color: #666;
+                    font-style: italic;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                ">
+                    "Our company uniforms have never looked better. The team was professional and delivered exactly what we envisioned. Highly recommend for corporate clients!"
+                </p>
+                <div style="
+                    font-size: 14px;
+                    color: #999;
+                ">
+                    <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> January 28, 2023
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div style="
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+                text-align: left;
+                position: relative;
+            ">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                ">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" style="
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        margin-right: 15px;
+                    ">
+                    <div>
+                        <h4 style="
+                            font-size: 18px;
+                            font-weight: 700;
+                            margin: 0 0 5px;
+                            color: #333;
+                        ">
+                            Emily Rodriguez
+                        </h4>
+                        <div style="
+                            color: #ffc107;
+                            font-size: 14px;
+                        ">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p style="
+                    color: #666;
+                    font-style: italic;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                ">
+                    "The bridal service made my wedding dreams come true. They listened to every detail and created a gown more beautiful than I imagined. Truly magical experience!"
+                </p>
+                <div style="
+                    font-size: 14px;
+                    color: #999;
+                ">
+                    <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> November 5, 2022
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section style="
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+">
+    <div style="
+        max-width: 800px;
+        margin: 0 auto;
+    ">
+        <h2 style="
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        ">
+            Ready to Transform Your Wardrobe?
+        </h2>
+        <p style="
+            font-size: clamp(16px, 2.5vw, 20px);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        ">
+            Book a free consultation with our style experts today and discover how we can elevate your look
+        </p>
+        <div style="
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        ">
+            <a href="#" style="
+                background: white;
+                color: #ff6b6b;
+                padding: 15px 30px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 18px;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" 
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)'">
+                <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Book Consultation
+            </a>
+            <a href="#" style="
+                background: transparent;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 18px;
+                transition: all 0.3s ease;
+                border: 2px solid white;
+            " onmouseover="this.style.background='rgba(255,255,255,0.2)'" 
+            onmouseout="this.style.background='transparent'">
+                <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Call Us Now
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Animation Keyframes -->
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</body>
+</html>
